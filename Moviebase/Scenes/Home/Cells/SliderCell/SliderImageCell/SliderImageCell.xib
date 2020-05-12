@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sliderImageCell" id="icC-jH-Sj9" userLabel="sliderImageCell" customClass="SliderImageCell" customModule="Moviebase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="289" height="356"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="289" height="356"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0K-Tf-T3a">
+                        <rect key="frame" x="0.0" y="0.0" width="289" height="356"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="udQ-hn-4kA">
+                                <rect key="frame" x="0.0" y="0.0" width="289" height="356"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="udQ-hn-4kA" secondAttribute="trailing" id="1bx-B2-5XI"/>
+                            <constraint firstItem="udQ-hn-4kA" firstAttribute="leading" secondItem="P0K-Tf-T3a" secondAttribute="leading" id="5U9-Ig-SjQ"/>
+                            <constraint firstAttribute="bottom" secondItem="udQ-hn-4kA" secondAttribute="bottom" id="Grt-de-Qex"/>
+                            <constraint firstItem="udQ-hn-4kA" firstAttribute="top" secondItem="P0K-Tf-T3a" secondAttribute="top" id="fTA-WK-N6e"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="P0K-Tf-T3a" firstAttribute="top" secondItem="icC-jH-Sj9" secondAttribute="top" id="6gb-jC-sl1"/>
+                <constraint firstAttribute="bottom" secondItem="P0K-Tf-T3a" secondAttribute="bottom" id="EWr-i7-SVJ"/>
+                <constraint firstItem="P0K-Tf-T3a" firstAttribute="leading" secondItem="icC-jH-Sj9" secondAttribute="leading" id="WpY-51-Z46"/>
+                <constraint firstAttribute="trailing" secondItem="P0K-Tf-T3a" secondAttribute="trailing" id="qdh-LS-jr1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="IIm-AY-ne6"/>
+            <size key="customSize" width="289" height="356"/>
+            <point key="canvasLocation" x="6.5217391304347831" y="50.223214285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="poster" width="640" height="960"/>
+    </resources>
+</document>

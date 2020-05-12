@@ -9,12 +9,19 @@
 import UIKit
 class HomeVC: BaseVC {
     
-    override func didLoded() {
-      setNavBarItems()
-        navigationController?.hidesBarsOnSwipe = true
+    @IBOutlet weak var SuperCollection: UICollectionView!
+    
+    
+    override func didLoded(){
+        setNavBarItems()
+        configureSliderCollection()
+        //navigationController?.hidesBarsOnSwipe = true
     }
+}
+extension HomeVC {
+    
     //MARK: - nav bar items
-    func setNavBarItems() {
+    func setNavBarItems(){
         //logo image
         let logo = UIImage(named: "micro.png")
         let imageView = UIImageView(image:logo)
@@ -33,15 +40,11 @@ class HomeVC: BaseVC {
         navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: menuButton), UIBarButtonItem(customView: searchButton)]
         
     }
-    @objc func presentMenu() {
+    @objc func presentMenu(){
         self.sideMenuViewController!.presentLeftMenuViewController()
-
     }
-    @objc func presentSearch() {
-           self.sideMenuViewController!.presentLeftMenuViewController()
-
-       }
-    
+    @objc func presentSearch(){
+        self.sideMenuViewController!.presentLeftMenuViewController()
+    }
     
 }
-//sideMenuViewController!.presentLeftMenuViewController()

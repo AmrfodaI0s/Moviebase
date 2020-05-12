@@ -1,0 +1,6 @@
+framework module Pods_Moviebase {
+  umbrella header "Pods-Moviebase-umbrella.h"
+
+  export *
+  module * { export * }
+}

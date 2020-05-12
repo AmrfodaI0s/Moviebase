@@ -11,6 +11,9 @@ struct K {
     struct Storyboard {
         static let sideMenuVC = "sideMenuVC"
         static let homeVC = "homeVC"
+        static let sliderCell = "sliderCell"
+        static let genreCell = "genreCell"
+        static let sliderImageCell = "sliderImageCell"
 
     }
 }
