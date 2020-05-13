@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="289" height="356"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="udQ-hn-4kA" secondAttribute="trailing" id="1bx-B2-5XI"/>
                             <constraint firstItem="udQ-hn-4kA" firstAttribute="leading" secondItem="P0K-Tf-T3a" secondAttribute="leading" id="5U9-Ig-SjQ"/>
@@ -41,6 +41,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="IIm-AY-ne6"/>
             <size key="customSize" width="289" height="356"/>
+            <connections>
+                <outlet property="poster_iv" destination="udQ-hn-4kA" id="JLT-hc-R4Y"/>
+            </connections>
             <point key="canvasLocation" x="6.5217391304347831" y="50.223214285714285"/>
         </collectionViewCell>
     </objects>

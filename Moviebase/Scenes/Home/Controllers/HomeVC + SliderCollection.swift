@@ -10,7 +10,7 @@ import UIKit
 //MARK: - Collection DataSource
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -19,6 +19,7 @@ extension HomeVC: UICollectionViewDataSource {
         return cell
         } else {
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.genreCell, for: indexPath) as! GenreCell
+
             return cell
         }
     }
@@ -27,8 +28,28 @@ extension HomeVC: UICollectionViewDataSource {
         SuperCollection.register(UINib(nibName: "SliderCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.sliderCell)
         SuperCollection.register(UINib(nibName: "GenreCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.genreCell)
     }
-    
-    
+    override func viewWillDisappear(_ animated: Bool) {
+           self.navigationController?.navigationBar.isHidden = false
+       }
+    //MARK: - Did Scroll UP || Down
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.lastContentOffset = scrollView.contentOffset.y
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.lastContentOffset < scrollView.contentOffset.y + 64 {
+            print("scrolling to Bottom")
+        }
+   //         else if self.lastContentOffset > scrollView.contentOffset.y {
+//            print("scrolling to top + \(lastContentOffset)")
+//            navigationController?.hidesBarsOnSwipe = false
+//            navigationController!.navigationBar.isHidden = false
+//}
+        else if self.lastContentOffset > scrollView.contentOffset.y{
+            print("scrolling to top")
+            navigationController?.setNavigationBarHidden(false, animated: true)
+        } else { print("didn't move") }
+    }
+   
 }
 //MARK: - Collection Delegate
 extension HomeVC: UICollectionViewDelegateFlowLayout {
@@ -40,9 +61,12 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         if indexPath.row == 0 {
             return CGSize(width: width, height: height - 200)
         } else {
-            return CGSize(width: width, height: height / 4)
-
+            return CGSize(width: width, height: 200 )
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0
+            , left: 0, bottom: 0, right: 0)
     }
     
 }

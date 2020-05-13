@@ -19,6 +19,8 @@
 		AA969F2A2468FC1F00D63378 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969F292468FC1F00D63378 /* NavigationVC.swift */; };
 		AA969F2C2468FE2900D63378 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969F2B2468FE2900D63378 /* Helper.swift */; };
 		AA969F2E2468FE3F00D63378 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969F2D2468FE3F00D63378 /* Constants.swift */; };
+		AAB6B0B1246B2CD10004B1FB /* GenreImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6B0AF246B2CD10004B1FB /* GenreImageCell.swift */; };
+		AAB6B0B2246B2CD10004B1FB /* GenreImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB6B0B0246B2CD10004B1FB /* GenreImageCell.xib */; };
 		AACB93AB246A1A1100D32855 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB93A9246A1A1100D32855 /* SliderCell.swift */; };
 		AACB93AC246A1A1100D32855 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACB93AA246A1A1100D32855 /* SliderCell.xib */; };
 		AACB93AF246A1FAD00D32855 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB93AE246A1FAD00D32855 /* GradientView.swift */; };
@@ -46,6 +48,8 @@
 		AA969F292468FC1F00D63378 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 		AA969F2B2468FE2900D63378 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		AA969F2D2468FE3F00D63378 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AAB6B0AF246B2CD10004B1FB /* GenreImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreImageCell.swift; sourceTree = "<group>"; };
+		AAB6B0B0246B2CD10004B1FB /* GenreImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreImageCell.xib; sourceTree = "<group>"; };
 		AACB93A9246A1A1100D32855 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		AACB93AA246A1A1100D32855 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		AACB93AE246A1FAD00D32855 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -233,9 +237,9 @@
 		AA969F362469070400D63378 /* SliderCell */ = {
 			isa = PBXGroup;
 			children = (
-				AACB93B6246A679F00D32855 /* SliderImageCell */,
 				AACB93A9246A1A1100D32855 /* SliderCell.swift */,
 				AACB93AA246A1A1100D32855 /* SliderCell.xib */,
+				AACB93B6246A679F00D32855 /* SliderImageCell */,
 			);
 			path = SliderCell;
 			sourceTree = "<group>";
@@ -245,8 +249,18 @@
 			children = (
 				AACB93B2246A5D4000D32855 /* GenreCell.swift */,
 				AACB93B3246A5D4000D32855 /* GenreCell.xib */,
+				AAB6B0B3246B2CDF0004B1FB /* GenreImageCell */,
 			);
 			path = GenreCell;
+			sourceTree = "<group>";
+		};
+		AAB6B0B3246B2CDF0004B1FB /* GenreImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				AAB6B0AF246B2CD10004B1FB /* GenreImageCell.swift */,
+				AAB6B0B0246B2CD10004B1FB /* GenreImageCell.xib */,
+			);
+			path = GenreImageCell;
 			sourceTree = "<group>";
 		};
 		AACB93AD246A1F8900D32855 /* Views */ = {
@@ -328,6 +342,7 @@
 			files = (
 				AACB93BC246A689E00D32855 /* SliderImageCell.xib in Resources */,
 				AA5227342468EBF000209793 /* LaunchScreen.storyboard in Resources */,
+				AAB6B0B2246B2CD10004B1FB /* GenreImageCell.xib in Resources */,
 				AA5227312468EBF000209793 /* Assets.xcassets in Resources */,
 				AACB93AC246A1A1100D32855 /* SliderCell.xib in Resources */,
 				AA52272F2468EBEE00209793 /* Main.storyboard in Resources */,
@@ -385,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA969F2A2468FC1F00D63378 /* NavigationVC.swift in Sources */,
+				AAB6B0B1246B2CD10004B1FB /* GenreImageCell.swift in Sources */,
 				AA969F2C2468FE2900D63378 /* Helper.swift in Sources */,
 				AACB93B1246A260400D32855 /* HomeVC + SliderCollection.swift in Sources */,
 				AA52272C2468EBEE00209793 /* BaseVC.swift in Sources */,

@@ -12,9 +12,9 @@ class SideMenuVC: BaseVC {
 
     override func didLoded() {
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-             return .lightContent
-       }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//             return .lightContent
+//       }
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         sideMenuViewController?.hideMenuViewController()
     }

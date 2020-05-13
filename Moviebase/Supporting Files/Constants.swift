@@ -14,6 +14,6 @@ struct K {
         static let sliderCell = "sliderCell"
         static let genreCell = "genreCell"
         static let sliderImageCell = "sliderImageCell"
-
+        static let genreImageCell = "genreImageCell"
     }
 }

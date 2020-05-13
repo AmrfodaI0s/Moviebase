@@ -1,5 +1,5 @@
 //
-//  SliderImageCell.swift
+//  GenreImageCell.swift
 //  Moviebase
 //
 //  Created by Eslam on 5/12/20.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class SliderImageCell: UICollectionViewCell {
+class GenreImageCell: UICollectionViewCell {
 
-    @IBOutlet weak var poster_iv: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
