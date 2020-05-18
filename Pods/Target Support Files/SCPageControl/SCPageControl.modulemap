@@ -1,4 +1,4 @@
-framework module SCPageControl {
+module SCPageControl {
   umbrella header "SCPageControl-umbrella.h"
 
   export *

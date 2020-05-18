@@ -9,10 +9,13 @@
 import UIKit
 
 class GenreImageCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var movieRatingLabel: UILabel!
+    @IBOutlet weak var MovieNameLabel: UILabel!
+    @IBOutlet weak var iv: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

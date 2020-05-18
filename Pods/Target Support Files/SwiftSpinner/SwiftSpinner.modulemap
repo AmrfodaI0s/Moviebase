@@ -1,4 +1,4 @@
-framework module SwiftSpinner {
+module SwiftSpinner {
   umbrella header "SwiftSpinner-umbrella.h"
 
   export *

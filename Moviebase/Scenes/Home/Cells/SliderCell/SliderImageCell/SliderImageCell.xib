@@ -22,17 +22,36 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="udQ-hn-4kA">
                                 <rect key="frame" x="0.0" y="0.0" width="289" height="356"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBx-t1-1M2" customClass="GradientView" customModule="Moviebase" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="228" width="289" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="yEJ-lI-7gM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="udQ-hn-4kA" secondAttribute="trailing" id="1bx-B2-5XI"/>
                             <constraint firstItem="udQ-hn-4kA" firstAttribute="leading" secondItem="P0K-Tf-T3a" secondAttribute="leading" id="5U9-Ig-SjQ"/>
+                            <constraint firstAttribute="trailing" secondItem="kBx-t1-1M2" secondAttribute="trailing" id="7PP-0O-BHT"/>
                             <constraint firstAttribute="bottom" secondItem="udQ-hn-4kA" secondAttribute="bottom" id="Grt-de-Qex"/>
+                            <constraint firstAttribute="bottom" secondItem="kBx-t1-1M2" secondAttribute="bottom" id="KaH-WM-TVe"/>
+                            <constraint firstItem="kBx-t1-1M2" firstAttribute="leading" secondItem="P0K-Tf-T3a" secondAttribute="leading" id="cZH-en-fIg"/>
                             <constraint firstItem="udQ-hn-4kA" firstAttribute="top" secondItem="P0K-Tf-T3a" secondAttribute="top" id="fTA-WK-N6e"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="P0K-Tf-T3a" firstAttribute="top" secondItem="icC-jH-Sj9" secondAttribute="top" id="6gb-jC-sl1"/>
                 <constraint firstAttribute="bottom" secondItem="P0K-Tf-T3a" secondAttribute="bottom" id="EWr-i7-SVJ"/>

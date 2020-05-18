@@ -30,7 +30,7 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="YT2-Lu-nTu" secondAttribute="trailing" id="Am7-ze-33b"/>
                             <constraint firstAttribute="bottom" secondItem="YT2-Lu-nTu" secondAttribute="bottom" id="WYZ-4p-QYi"/>
@@ -38,7 +38,7 @@
                             <constraint firstItem="YT2-Lu-nTu" firstAttribute="top" secondItem="0jI-hf-Hhr" secondAttribute="top" id="lKm-o7-qpK"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-HH-uQc" customClass="GradientView" customModule="Moviebase">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-HH-uQc">
                         <rect key="frame" x="0.0" y="228" width="289" height="128"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVENGERS 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27I-8G-1Zd">
@@ -47,7 +47,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="q7A-7E-wrW">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7A-7E-wrW">
                                 <rect key="frame" x="8" y="104" width="273" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="laD-s4-nfQ"/>
@@ -65,14 +65,6 @@
                             <constraint firstItem="q7A-7E-wrW" firstAttribute="leading" secondItem="bNz-HH-uQc" secondAttribute="leading" constant="8" id="kxr-Lw-9VK"/>
                             <constraint firstAttribute="height" constant="128" id="y79-pQ-LYK"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -88,6 +80,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="289" height="356"/>
             <connections>
+                <outlet property="MovieNameLabel" destination="27I-8G-1Zd" id="zov-Nd-gF4"/>
                 <outlet property="pageController" destination="q7A-7E-wrW" id="sCk-q8-e84"/>
                 <outlet property="sliderImageCollection" destination="YT2-Lu-nTu" id="9f5-VJ-eab"/>
             </connections>

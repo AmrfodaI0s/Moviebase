@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D405AB8D2CEBD8FE5A83396DD0634769"
-               BuildableName = "AKSideMenu.framework"
+               BuildableName = "libAKSideMenu.a"
                BlueprintName = "AKSideMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

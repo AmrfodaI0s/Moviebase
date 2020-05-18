@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AD6AB655C132B9B011FC04DDC1E3A292"
-               BuildableName = "SwiftSpinner.framework"
+               BuildableName = "libSwiftSpinner.a"
                BlueprintName = "SwiftSpinner"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

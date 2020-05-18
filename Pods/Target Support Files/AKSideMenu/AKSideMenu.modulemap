@@ -1,4 +1,4 @@
-framework module AKSideMenu {
+module AKSideMenu {
   umbrella header "AKSideMenu-umbrella.h"
 
   export *

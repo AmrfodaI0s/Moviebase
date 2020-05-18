@@ -9,12 +9,12 @@ import UIKit
 
 @IBDesignable class GradientView: UIView {
     
-    @IBInspectable var topColor: UIColor = UIColor.blue {
+    @IBInspectable var topColor: UIColor = UIColor.white {
         didSet {
             self.setNeedsLayout()
         }
     }
-    @IBInspectable var bottomColor: UIColor = UIColor.orange {
+    @IBInspectable var bottomColor: UIColor = UIColor.white {
         didSet {
             self.setNeedsLayout()
         }
@@ -25,6 +25,8 @@ import UIKit
         gradient.locations = [0.0 , 1.0]
         gradient.frame = bounds
         layer.insertSublayer(gradient, at: 0)
+        
     }
+
  
 }

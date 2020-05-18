@@ -1,4 +1,4 @@
-framework module Pods_Moviebase {
+module Pods_Moviebase {
   umbrella header "Pods-Moviebase-umbrella.h"
 
   export *

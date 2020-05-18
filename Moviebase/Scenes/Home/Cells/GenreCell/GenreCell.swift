@@ -9,7 +9,12 @@
 import UIKit
 
 class GenreCell: UICollectionViewCell {
-
+    var trendingMoviesResults: [TrendingMoviesResult]? {
+        didSet {
+            genreCollection.reloadData()
+        }
+    }
+    var indexPath: IndexPath?
     @IBOutlet weak var genreType_label: UILabel!
     @IBOutlet weak var genreNameLabel: UILabel!
     @IBOutlet weak var genreCollection: UICollectionView!
@@ -18,16 +23,18 @@ class GenreCell: UICollectionViewCell {
         genreCollection.dataSource = self
         genreCollection.delegate = self
         genreCollection.register(UINib(nibName: "GenreImageCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.genreImageCell)
+        //getTrendingMovies()
     }
 
 }
 extension GenreCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.genreImageCell, for: indexPath) as! GenreImageCell
+        setGenreCells(indexPath: indexPath, cell: cell)
         return cell
     }
     

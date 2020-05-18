@@ -16,4 +16,12 @@ struct K {
         static let sliderImageCell = "sliderImageCell"
         static let genreImageCell = "genreImageCell"
     }
+    struct IBOutlets{
+        static let trendingMovies = "Trending"
+
+    }
+    enum ContentType: String {
+       case movie = "Movie"
+        case tvSeries = "TV"
+    }
 }

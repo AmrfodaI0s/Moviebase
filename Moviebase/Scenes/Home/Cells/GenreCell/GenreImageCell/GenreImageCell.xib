@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsF-fl-BgT">
                         <rect key="frame" x="0.0" y="0.0" width="114" height="161"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="Amc-Gf-MWk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Amc-Gf-MWk">
                                 <rect key="frame" x="0.0" y="0.0" width="114" height="161"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -28,10 +28,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADW-Hh-kvs">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADW-Hh-kvs" customClass="GradientView" customModule="Moviebase" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="137" width="114" height="24"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Knight Dark 2020" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWz-hz-IHv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWz-hz-IHv">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,6 +48,14 @@
                                     <constraint firstAttribute="trailing" secondItem="FWz-hz-IHv" secondAttribute="trailing" id="qoC-eO-Vwl"/>
                                     <constraint firstItem="FWz-hz-IHv" firstAttribute="top" secondItem="ADW-Hh-kvs" secondAttribute="top" id="weP-kf-HWy"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ey-rC-5C4">
                                 <rect key="frame" x="82" y="4" width="28" height="14"/>
@@ -97,10 +105,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="114" height="161"/>
+            <connections>
+                <outlet property="MovieNameLabel" destination="FWz-hz-IHv" id="smq-f9-wKc"/>
+                <outlet property="iv" destination="Amc-Gf-MWk" id="hXJ-9z-WhY"/>
+                <outlet property="movieRatingLabel" destination="I6E-wz-Jw2" id="Lo9-hk-IUg"/>
+            </connections>
             <point key="canvasLocation" x="178.2608695652174" y="189.84375"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="poster" width="640" height="960"/>
-    </resources>
 </document>

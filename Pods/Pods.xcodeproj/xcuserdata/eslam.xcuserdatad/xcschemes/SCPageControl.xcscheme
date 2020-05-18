@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF5CC1898BADE9695356609391C13D77"
-               BuildableName = "SCPageControl.framework"
+               BuildableName = "libSCPageControl.a"
                BlueprintName = "SCPageControl"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
