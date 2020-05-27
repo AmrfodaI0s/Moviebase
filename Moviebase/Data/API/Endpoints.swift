@@ -49,6 +49,12 @@ class URLs {
     static let SearchQueryEndURL = "&include_adult=false"
 
     static let videoUrl = "https://www.themoviedb.org/video/play?key=P6AaSMfXHbA"
-    static let popularMovies = MovieCrewBaseURL + "popular?api_key=5d3fa758ba1c2690af9c4455aa75790e&language=en-US&page=1"
-    static let trendingMovies = baseURL + "trending/movie/week?api_key=" + API_Key
+    static let popularMovies = MovieCrewBaseURL + "popular?api_key=\(API_Key)&language=en-US&page="
+    static let trendingMovies = baseURL + "trending/movie/week?api_key=" + API_Key + "&language=en-US"
+    static let nowPlayingMovies = MovieCrewBaseURL + "now_playing?api_key=\(API_Key)&language=en-US&region=US&page="
+    static let upComingMovies = MovieCrewBaseURL + "upcoming?api_key=\(API_Key)&language=en-US&page="
+    ///mark:- Get TV Show
+    static let tvBaseUrl = "https://api.themoviedb.org/3/tv/"
+    static let popularTvShows = "\(tvBaseUrl)popular?api_key=\(API_Key)&language=en-US&page="
+
 }

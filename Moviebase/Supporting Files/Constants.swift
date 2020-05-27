@@ -15,13 +15,16 @@ struct K {
         static let genreCell = "genreCell"
         static let sliderImageCell = "sliderImageCell"
         static let genreImageCell = "genreImageCell"
+        static let goCollectionVC = "goCollectionVC"
+        static let collectionVC = "collectionVC"
+        static let collectionsCell = "collectionsCell"
     }
     struct IBOutlets{
-        static let trendingMovies = "Trending"
+        static let moviesTypes = ["Popular","Now Playing","Upcoming", "Popular"]
 
     }
     enum ContentType: String {
-       case movie = "Movie"
-        case tvSeries = "TV"
+       case movie = "MOVIES"
+        case tvSeries = "TV SHOWS"
     }
 }

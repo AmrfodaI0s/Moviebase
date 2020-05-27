@@ -9,12 +9,13 @@
 import UIKit
 
 class BaseVC: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         didLoded()
     }
-   
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     func didLoded() {
     }
 

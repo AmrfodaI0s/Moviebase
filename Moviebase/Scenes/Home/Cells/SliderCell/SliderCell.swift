@@ -16,16 +16,14 @@ class SliderCell: UICollectionViewCell {
     @IBOutlet weak var pageController: UIPageControl!
     var state  = 0
     var index = 0
-    var popularMoviesResults: [PopularMoviesResult]? {
+    var trendingMovies: [Result]? {
         didSet {
             sliderImageCollection.reloadData()
-            MovieNameLabel.text = popularMoviesResults?[0].originalTitle
+            MovieNameLabel.text = trendingMovies?[0].originalTitle
         }
     }
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        fetchPopularMovies()
         pageController.numberOfPages = 10
         sliderImageCollection.dataSource = self
         sliderImageCollection.delegate = self
@@ -43,28 +41,22 @@ class SliderCell: UICollectionViewCell {
                sliderImageCollection.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
            }
        }
-    //MARK: - fetch all Popular Movies()
-    func fetchPopularMovies() {
-        MovieServices.getPopularMovies { (err, popularMovies) in
-            self.popularMoviesResults = popularMovies?.results
-        }
-    }
 }
 extension SliderCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return popularMoviesResults?.count ?? 0
+        return trendingMovies?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.sliderImageCell, for: indexPath) as! SliderImageCell
-        Helper.displayImage(imageView: cell.poster_iv, url: popularMoviesResults?[indexPath.row].posterPath ?? "")
+        Helper.displayImage(imageView: cell.poster_iv, url: trendingMovies?[indexPath.row].posterPath ?? "")
         return cell
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == sliderImageCollection {
             let index = Int(self.sliderImageCollection.contentOffset.x / self.sliderImageCollection.frame.width)
             pageController.currentPage = index
-            MovieNameLabel.text = popularMoviesResults?[index].originalTitle
+            MovieNameLabel.text = trendingMovies?[index].originalTitle
         }
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -78,3 +70,4 @@ extension SliderCell: UICollectionViewDelegateFlowLayout {
     }
     
 }
+

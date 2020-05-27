@@ -30,23 +30,9 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADW-Hh-kvs" customClass="GradientView" customModule="Moviebase" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="137" width="114" height="24"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWz-hz-IHv">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="24"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FWz-hz-IHv" firstAttribute="centerY" secondItem="ADW-Hh-kvs" secondAttribute="centerY" id="FEE-XL-ctF"/>
                                     <constraint firstAttribute="height" constant="24" id="HY9-Q8-GMi"/>
-                                    <constraint firstAttribute="bottom" secondItem="FWz-hz-IHv" secondAttribute="bottom" id="RZa-AQ-59r"/>
-                                    <constraint firstItem="FWz-hz-IHv" firstAttribute="leading" secondItem="ADW-Hh-kvs" secondAttribute="leading" id="mh1-uk-XXw"/>
-                                    <constraint firstItem="FWz-hz-IHv" firstAttribute="centerX" secondItem="ADW-Hh-kvs" secondAttribute="centerX" id="qRY-Kf-oKK"/>
-                                    <constraint firstAttribute="trailing" secondItem="FWz-hz-IHv" secondAttribute="trailing" id="qoC-eO-Vwl"/>
-                                    <constraint firstItem="FWz-hz-IHv" firstAttribute="top" secondItem="ADW-Hh-kvs" secondAttribute="top" id="weP-kf-HWy"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="topColor">
@@ -106,7 +92,6 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="114" height="161"/>
             <connections>
-                <outlet property="MovieNameLabel" destination="FWz-hz-IHv" id="smq-f9-wKc"/>
                 <outlet property="iv" destination="Amc-Gf-MWk" id="hXJ-9z-WhY"/>
                 <outlet property="movieRatingLabel" destination="I6E-wz-Jw2" id="Lo9-hk-IUg"/>
             </connections>

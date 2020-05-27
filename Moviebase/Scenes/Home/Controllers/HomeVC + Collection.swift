@@ -11,15 +11,15 @@ import UIKit
 extension HomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return K.IBOutlets.moviesTypes.count + 1
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
            return UIEdgeInsets(top: 0
                , left: 0, bottom: 0, right: 0)
        }
     func configureSliderCollection() {
-        SuperCollection.register(UINib(nibName: "SliderCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.sliderCell)
-        SuperCollection.register(UINib(nibName: "GenreCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.genreCell)
+      
     }
 }
 //MARK: - Collection Delegate
@@ -29,30 +29,26 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         let height = screen.height
         let width = screen.width
         if indexPath.row == 0 {
-            return CGSize(width: width, height: height - 150)
-        } else {
+            return CGSize(width: width, height: height - 200)
+        } else if indexPath.row > 0 {
+            return CGSize(width: width, height: 200 )
+        }
+        else {
             return CGSize(width: width, height: 200 )
         }
     }
-   //MARK: - cell For Item At
+    //MARK: - cell For Item At
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-                let genreCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.genreCell, for: indexPath) as! GenreCell
-                let sliderCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.sliderCell, for: indexPath) as! SliderCell
         if indexPath.row == 0 {
+            let sliderCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.sliderCell, for: indexPath) as! SliderCell
+            sliderCell.trendingMovies = self.trendingMovies?.results
             return sliderCell
+        } else if indexPath.row > 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.genreCell, for: indexPath) as! GenreCell
+            setGenreCell(index: indexPath.row, cell: cell)
+            return cell
         } else {
-            switch indexPath.row {
-            case 1 :
-                genreCell.genreNameLabel.text = "Trending"
-                genreCell.genreType_label.text = K.ContentType.movie.rawValue
-                return genreCell
-            case 2 :
-                genreCell.genreNameLabel.text = "Popular"
-                genreCell.genreType_label.text = K.ContentType.tvSeries.rawValue
-                return genreCell
-            default:
-                return genreCell
-            }
+            return UICollectionViewCell()
         }
     }
 }

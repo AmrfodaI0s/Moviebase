@@ -1,9 +1,9 @@
 import Foundation
 
-// MARK: - TrendingMovies
-struct TrendingMovies: Codable {
-    let page, totalResults, totalPages: Int
-    let results: [TrendingMoviesResult]
+// MARK: - Movies
+struct Movies: Codable {
+    let page, totalResults, totalPages: Int?
+    let results: [Result]
 
     enum CodingKeys: String, CodingKey {
         case page
@@ -14,19 +14,19 @@ struct TrendingMovies: Codable {
 }
 
 // MARK: - Result
-struct TrendingMoviesResult: Codable {
-    let popularity: Double
-    let voteCount: Int
-    let video: Bool
-    let posterPath: String
-    let id: Int
-    let adult: Bool
-    let backdropPath: String
-    let originalTitle: String
-    let genreIDS: [Int]
-    let title: String
-    let voteAverage: Double
-    let overview, releaseDate: String
+struct Result: Codable {
+    let popularity: Double?
+    let voteCount: Int?
+    let video: Bool?
+    let posterPath: String?
+    let id: Int?
+    let adult: Bool?
+    let backdropPath: String?
+    let originalTitle: String?
+    let genreIDS: [Int]?
+    let title: String?
+    let voteAverage: Double?
+    let overview, releaseDate: String?
 
     enum CodingKeys: String, CodingKey {
         case popularity

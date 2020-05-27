@@ -1,38 +1,30 @@
 PODS:
   - AKSideMenu (1.4.5)
-  - Alamofire (5.1.0)
-  - AMScrollingNavbar (5.6.1)
+  - Alamofire (5.2.0)
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
-  - SCPageControl (0.4.0)
   - SwiftSpinner (2.1.0)
 
 DEPENDENCIES:
   - AKSideMenu
   - Alamofire
-  - AMScrollingNavbar
   - Kingfisher
-  - SCPageControl
   - SwiftSpinner
 
 SPEC REPOS:
   trunk:
     - AKSideMenu
     - Alamofire
-    - AMScrollingNavbar
     - Kingfisher
-    - SCPageControl
     - SwiftSpinner
 
 SPEC CHECKSUMS:
   AKSideMenu: 2880c44ee04a68f40be783c5cb997b2e0ee22401
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
-  AMScrollingNavbar: 602dd7a26efd0edb40d67ec20b5ee80b9f573bbb
+  Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
-  SCPageControl: 8a8dfbba7d7d8c66487a317cb4c4578a7e4af27a
   SwiftSpinner: 0f15c006307f8d8bbac075638927ec1361b565d7
 
-PODFILE CHECKSUM: 438fe1df22d7a5e2ea38b9be1ccd9962293d9b67
+PODFILE CHECKSUM: b394991d2f6e1ce9d72259ef8bd4ffe6c7a08377
 
 COCOAPODS: 1.9.1
