@@ -18,9 +18,12 @@ struct K {
         static let goCollectionVC = "goCollectionVC"
         static let collectionVC = "collectionVC"
         static let collectionsCell = "collectionsCell"
+        static let moviesDetailsVC = "moviesDetailsVC"
+        static let detailsSlider = "detailsSlider"
+        static let popularPeopleCell = "popularPeopleCell"
     }
     struct IBOutlets{
-        static let moviesTypes = ["Popular","Now Playing","Upcoming", "Popular"]
+        static let moviesTypes = ["Popular","Now Playing","Upcoming", "Popular", "Popular People"]
 
     }
     enum ContentType: String {

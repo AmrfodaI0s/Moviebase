@@ -31,7 +31,6 @@ class CollectionVC: BaseVC {
     override func didLoded() {
         collectionView.addSubview(refresher)
         collectionView.register(UINib(nibName: "CollectionsCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.collectionsCell)
-        self.navigationController?.navigationBar.tintColor = .yellow
         self.shyNavBarManager.scrollView = collectionView
 
     }

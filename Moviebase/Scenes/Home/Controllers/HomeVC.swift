@@ -14,7 +14,8 @@ class HomeVC: BaseVC {
     var nowPlayingMovies: Movies?
     var upComingMovies: Movies?
     var popularTVShows: TVShows?
-    
+    var popularPeople: PopularPeople?
+
     @IBOutlet weak var SuperCollection: UICollectionView!
     
     lazy var profileImage: UIImageView = {
@@ -26,13 +27,12 @@ class HomeVC: BaseVC {
         return image
     }()
     override func didLoded(){
-        SwiftSpinner.show("")
-        getPopularMovies()
         getTrendingMovies()
+        getPopularMovies()
         getNowPlayingMovies()
         getUpComingMovies()
         getPopularTVShows()
-        SwiftSpinner.hide()
+        getPopularPeople()
         setNavBarItems(show: true)
         SuperCollection.register(UINib.init(nibName: "GenreCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.genreCell)
         SuperCollection.register(UINib(nibName: "SliderCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.sliderCell)
@@ -40,9 +40,13 @@ class HomeVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isTranslucent = true
+        profileImage.alpha = 1
+
     }
     override func viewWillDisappear(_ animated: Bool) {
-        setNavBarItems(show: false)
+        profileImage.alpha = 0
+        self.navigationController?.navigationBar.tintColor = .yellow
+
     }
 }
 
@@ -51,7 +55,6 @@ extension HomeVC {
     func addImageToNavBar() {
         guard let navBar = self.navigationController?.navigationBar
            else { return }
-        //navBar.layer.opacity = 0
         navBar.setGradientBackground(colors: [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5453499572), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.449620077), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.35),#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.05369755988),.clear], startPoint: .custom(point: CGPoint(x: 0.0, y: 0.2)), endPoint: .custom(point: CGPoint(x: 0, y: 0.9)))
         navBar.shadowImage = UIImage()
         navBar.addSubview(profileImage)
@@ -73,7 +76,6 @@ extension HomeVC {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
-        self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "kk", style: .plain, target: nil, action: nil)
 
         //leftButtons
         self.navigationController?.navigationBar.setGradientBackground(colors: [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5453499572), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.449620077), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.35),#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.05369755988),.clear], startPoint: .custom(point: CGPoint(x: 0.0, y: 0.2)), endPoint: .custom(point: CGPoint(x: 0, y: 1)))
@@ -87,10 +89,6 @@ extension HomeVC {
         searchButton.addTarget(self, action: #selector(presentSearch), for: .touchUpInside)
         navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: menuButton), UIBarButtonItem(customView: searchButton)]
 
-//        }
-//        else {
-//            //self.navigationController?.navigationBar.isTranslucent = false
-//        }
     }
     @objc func presentMenu(){
         self.sideMenuViewController!.presentLeftMenuViewController()
@@ -111,11 +109,17 @@ extension HomeVC {
         }
     }
     //MARK: - fetch all trending Movies
-       func getTrendingMovies(){
-        MovieServices.trendingMovies { (error, trendingMovies)  in
-                   self.trendingMovies = trendingMovies
-               }
-       }
+    func getTrendingMovies(){
+        SwiftSpinner.show("")
+        DispatchQueue.main.async {
+            MovieServices.trendingMovies { (error, trendingMovies)  in
+                self.trendingMovies = trendingMovies
+                self.SuperCollection.reloadData()
+                
+            }
+            SwiftSpinner.hide()
+        }
+    }
     //MARK: - fetch now Playing Movies
     func getNowPlayingMovies(){
             MovieServices.nowPlayingMovies(completion: { (error, moviesNowPlaying) in
@@ -137,18 +141,34 @@ extension HomeVC {
             self.SuperCollection.reloadData()
         }
     }
+    //MARK: - fetch Popular People
+    func getPopularPeople() {
+        PeopleDataServices.getPopularPeople(page: 1) { (error, popularPeople, last) in
+            self.popularPeople = popularPeople
+            self.SuperCollection.reloadData()
+        }
+    }
 
 }
-//MARK: - Movie Services
+//MARK: - Set Genre Cell
 extension HomeVC {
     func setGenreCell(index: Int, cell: GenreCell) {
-        let moviesCollections = [popularMovies, nowPlayingMovies, upComingMovies]
-         let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.collectionVC) as! CollectionVC
-        //destinationVC.modalPresentationStyle = .fullScreen
+        
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
+        
+        let moviesCollections = [popularMovies, nowPlayingMovies, upComingMovies]
+        
+        let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.collectionVC) as! CollectionVC
+        
+        let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.moviesDetailsVC) as! MoviesDetailsVC
+        
         cell.selectedCollection = { self.navigationController?.pushViewController(destinationVC, animated: true) }
+        cell.selectedMovie =  { [weak self] selectMovie in
+            detailsVC.movieDetails = selectMovie
+            self?.navigationController?.pushViewController(detailsVC, animated: true)
+        }
         switch index {
         case 1:
             cell.popularMovies = popularMovies?.results
@@ -173,13 +193,17 @@ extension HomeVC {
             destinationVC.selectedCollection = moviesCollections[2]
             destinationVC.url = URLs.upComingMovies
             cell.state = index
-
+            
         case 4:
             cell.popularTVShows = popularTVShows?.results
             cell.genreType_label.text = K.ContentType.tvSeries.rawValue
             cell.genreNameLabel.text = K.IBOutlets.moviesTypes[3]
             cell.state = index
             
+        case 5:
+            cell.popularPeople = popularPeople?.results
+            cell.genreNameLabel.text = K.IBOutlets.moviesTypes[4]
+            cell.state = index
 
          default:
             return

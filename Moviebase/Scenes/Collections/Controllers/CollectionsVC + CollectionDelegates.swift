@@ -23,7 +23,12 @@ extension CollectionVC : UICollectionViewDataSource {
                 getMoreData()
             }
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedMovie = results?[indexPath.row]
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.moviesDetailsVC) as! MoviesDetailsVC
+        vc.movieDetails = selectedMovie
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 extension CollectionVC : UICollectionViewDelegateFlowLayout {
