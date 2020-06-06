@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 class CollectionVC: BaseVC {
     var url = ""
     var selectedCollection: Movies? {
@@ -17,9 +18,9 @@ class CollectionVC: BaseVC {
         }
     }
     var results : [Result]? = []
-    var lastPage = 0
     var currentPage = 0
     var isLoading = false
+    var lastPage = 0
 
     lazy var refresher: UIRefreshControl = { () -> UIRefreshControl in
         let ref = UIRefreshControl()
@@ -42,15 +43,20 @@ class CollectionVC: BaseVC {
     @objc func getMoreData() {
         guard !isLoading else { return }
         guard currentPage < lastPage else { return }
+        SwiftSpinner.show("")
         isLoading = true
-        MovieServices.getMoreMovies(url: url, currentPage+1) { (error, collection, lastPage) in
+        print(url)
+        MovieServices.getMoreMovies(url: url, currentPage+1) { (error, collection: Movies?) in
                 for data in collection!.results {
-                self.results?.append(data)
+                        self.results?.append(data)
             }
+           
+            //self.results?.append(contentsOf: movies)
             self.isLoading = false
+            SwiftSpinner.hide()
             self.collectionView.reloadData()
             self.currentPage += 1
-            self.lastPage = lastPage
+            self.lastPage = self.selectedCollection?.totalPages ?? 0
         }
     }
 }

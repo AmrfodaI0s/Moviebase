@@ -30,7 +30,8 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         let width = screen.width
         if indexPath.row == 0 {
             return CGSize(width: width, height: height - 200)
-        } else if indexPath.row > 0 {
+        } else
+        if indexPath.row > 0 {
             return CGSize(width: width, height: 200 )
         }
         else {
@@ -43,7 +44,8 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
             let sliderCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.sliderCell, for: indexPath) as! SliderCell
             sliderCell.trendingMovies = self.trendingMovies?.results
             return sliderCell
-        } else if indexPath.row > 0 {
+        } else
+        if indexPath.row > 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.genreCell, for: indexPath) as! GenreCell
             setGenreCell(index: indexPath.row, cell: cell)
             return cell

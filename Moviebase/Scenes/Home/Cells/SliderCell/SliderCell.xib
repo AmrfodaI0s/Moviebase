@@ -41,8 +41,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-HH-uQc">
                         <rect key="frame" x="0.0" y="228" width="289" height="128"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVENGERS 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27I-8G-1Zd">
-                                <rect key="frame" x="91" y="80" width="107.5" height="16.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVENGERS 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27I-8G-1Zd">
+                                <rect key="frame" x="24" y="80" width="241" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,9 +58,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="27I-8G-1Zd" firstAttribute="centerX" secondItem="bNz-HH-uQc" secondAttribute="centerX" id="83B-Ia-aRp"/>
                             <constraint firstAttribute="bottom" secondItem="q7A-7E-wrW" secondAttribute="bottom" id="Te5-5p-gI5"/>
+                            <constraint firstAttribute="trailing" secondItem="27I-8G-1Zd" secondAttribute="trailing" constant="24" id="ZZD-LT-kwS"/>
                             <constraint firstItem="27I-8G-1Zd" firstAttribute="centerY" secondItem="bNz-HH-uQc" secondAttribute="centerY" constant="24" id="cXK-NG-Qgf"/>
+                            <constraint firstItem="27I-8G-1Zd" firstAttribute="leading" secondItem="bNz-HH-uQc" secondAttribute="leading" constant="24" id="flq-1j-Yjp"/>
                             <constraint firstAttribute="trailing" secondItem="q7A-7E-wrW" secondAttribute="trailing" constant="8" id="hPH-Lb-3lq"/>
                             <constraint firstItem="q7A-7E-wrW" firstAttribute="leading" secondItem="bNz-HH-uQc" secondAttribute="leading" constant="8" id="kxr-Lw-9VK"/>
                             <constraint firstAttribute="height" constant="128" id="y79-pQ-LYK"/>

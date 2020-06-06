@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Movies
 struct Movies: Codable {
-    let page, totalResults, totalPages: Int?
+    var page, totalResults, totalPages: Int?
     let results: [Result]
 
     enum CodingKeys: String, CodingKey {
