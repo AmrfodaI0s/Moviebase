@@ -11,7 +11,7 @@ import Foundation
 // MARK: - PopularTVShows
 struct TVShows: Codable {
     let page, totalResults, totalPages: Int
-    let results: [Results]
+    let results: [TVShowsResults]
 
     enum CodingKeys: String, CodingKey {
         case page
@@ -22,7 +22,7 @@ struct TVShows: Codable {
 }
 
 // MARK: - Result
-struct Results: Codable {
+struct TVShowsResults: Codable {
     let originalName: String?
     let genreIDS: [Int]?
     let name: String?
@@ -57,4 +57,5 @@ enum OriginalLanguage: String, Codable {
     case tr = "tr"
     case zh = "zh"
     case es = "es"
+    case th = "th"
 }

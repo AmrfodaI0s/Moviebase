@@ -16,23 +16,23 @@ class HomeVC: BaseVC {
     var popularTVShows: TVShows?
     var popularPeople: PopularPeople?
     
-    @IBOutlet weak var SuperCollection: UICollectionView!
-    
+    @IBOutlet weak var SuperCollection: UICollectionView! {
+        didSet {
+            SuperCollection.register(UINib.init(nibName: "GenreCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.genreCell)
+            SuperCollection.register(UINib(nibName: "SliderCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.sliderCell)
+        }
+    }
     lazy var profileImage: UIImageView = {
         var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
-        image.image = #imageLiteral(resourceName: "micro")
+        image.image = #imageLiteral(resourceName: "cameraman")
         return image
     }()
     override func didLoded(){
-        getMovies()
-        getPopularTVShows()
-        getPopularPeople()
+        getDataServices()
         setNavBarItems(show: true)
-        SuperCollection.register(UINib.init(nibName: "GenreCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.genreCell)
-        SuperCollection.register(UINib(nibName: "SliderCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.sliderCell)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,39 +49,33 @@ class HomeVC: BaseVC {
 
 //MARK: - API GET Methods
 extension HomeVC {
-    func getMovies(){
+    func getDataServices(){
         DispatchQueue.main.async {
             SwiftSpinner.show("Loading")
-            MovieServices.getMoreMovies(url: URLs.trendingMovies, 1) { (error, trendingMovies: Movies?) in self.trendingMovies = trendingMovies
+            DataServices.GET(url: URLs.trendingMovies, 1) { (error, trendingMovies: Movies?) in self.trendingMovies = trendingMovies
                 self.SuperCollection.reloadData()
             }
-            MovieServices.getMoreMovies(url: URLs.popularMovies, 1) { (error, popularMovies: Movies?) in
+            DataServices.GET(url: URLs.popularMovies, 1) { (error, popularMovies: Movies?) in
                 self.popularMovies = popularMovies
-                self.SuperCollection.reloadData()
+                //self.SuperCollection.reloadData()
             }
-            MovieServices.getMoreMovies(url: URLs.upComingMovies, 1) { (error, upComingMovies: Movies?) in
+            DataServices.GET(url: URLs.upComingMovies, 1) { (error, upComingMovies: Movies?) in
                 self.upComingMovies = upComingMovies
-                self.SuperCollection.reloadData()
+                //self.SuperCollection.reloadData()
             }
-            MovieServices.getMoreMovies(url: URLs.nowPlayingMovies, 1) { (error, nowPlayingMovies: Movies?) in
+            DataServices.GET(url: URLs.nowPlayingMovies, 1) { (error, nowPlayingMovies: Movies?) in
                 self.nowPlayingMovies = nowPlayingMovies
+                //self.SuperCollection.reloadData()
+            }
+            DataServices.GET(url: URLs.popularTvShows, 1) { (error, popularTVShows: TVShows?) in
+                self.popularTVShows = popularTVShows
+                //self.SuperCollection.reloadData()
+            }
+            DataServices.GET(url: URLs.popularPeopleURL, 1) { (error, popularPeople: PopularPeople?) in
+                self.popularPeople = popularPeople
                 self.SuperCollection.reloadData()
             }
             SwiftSpinner.hide()
-        }
-    }
-    //MARK: - fetch Popular TV-Shows
-    func getPopularTVShows() {
-        TVShowsServices.getPopularTVShows { (error, popularTVShows) in
-            self.popularTVShows = popularTVShows
-            self.SuperCollection.reloadData()
-        }
-    }
-    //MARK: - fetch Popular People
-    func getPopularPeople() {
-        PeopleDataServices.getPopularPeople(page: 1) { (error, popularPeople, last) in
-            self.popularPeople = popularPeople
-            self.SuperCollection.reloadData()
         }
     }
     
@@ -95,50 +89,61 @@ extension HomeVC {
         navigationItem.backBarButtonItem = backItem
         
         let moviesCollections = [popularMovies, nowPlayingMovies, upComingMovies]
-        
+        let tvShowsCollections = [popularTVShows]
         let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.collectionVC) as! CollectionVC
         
         let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.moviesDetailsVC) as! MoviesDetailsVC
         
         cell.selectedCollection = { self.navigationController?.pushViewController(destinationVC, animated: true) }
-        cell.selectedMovie =  { [weak self] selectMovie in
-            detailsVC.movieDetails = selectMovie
+        cell.selectedMovie =  { [weak self] selected in
+            detailsVC.movieDetails = selected
             self?.navigationController?.pushViewController(detailsVC, animated: true)
         }
         switch index {
         case 1:
             cell.popularMovies = popularMovies?.results
             cell.genreType_label.text = K.ContentType.movie.rawValue
-            cell.genreNameLabel.text = K.IBOutlets.moviesTypes[0]
-            destinationVC.selectedCollection = moviesCollections[0]
+            cell.genreNameLabel.text = K.IBOutlets.contentTypes[0]
+            destinationVC.selectedMoviesCollection = moviesCollections[0]
             destinationVC.url = URLs.popularMovies
             cell.state = index
+            destinationVC.title = K.IBOutlets.contentTypes[0] + " Movies"
             
         case 2:
             cell.nowPlayingMovies = nowPlayingMovies?.results
             cell.genreType_label.text = K.ContentType.movie.rawValue
-            cell.genreNameLabel.text = K.IBOutlets.moviesTypes[1]
-            destinationVC.selectedCollection = moviesCollections[1]
+            cell.genreNameLabel.text = K.IBOutlets.contentTypes[1]
+            destinationVC.selectedMoviesCollection = moviesCollections[1]
+            destinationVC.title = K.IBOutlets.contentTypes[1] + " Movies"
             destinationVC.url = URLs.nowPlayingMovies
             cell.state = index
             
         case 3 :
             cell.upComingMovies = upComingMovies?.results
             cell.genreType_label.text = K.ContentType.movie.rawValue
-            cell.genreNameLabel.text = K.IBOutlets.moviesTypes[2]
-            destinationVC.selectedCollection = moviesCollections[2]
+            cell.genreNameLabel.text = K.IBOutlets.contentTypes[2]
+            destinationVC.selectedMoviesCollection = moviesCollections[2]
             destinationVC.url = URLs.upComingMovies
+            destinationVC.title = K.IBOutlets.contentTypes[2] + " Movies"
             cell.state = index
             
         case 4:
             cell.popularTVShows = popularTVShows?.results
             cell.genreType_label.text = K.ContentType.tvSeries.rawValue
-            cell.genreNameLabel.text = K.IBOutlets.moviesTypes[3]
+            cell.genreNameLabel.text = K.IBOutlets.contentTypes[3]
+            destinationVC.selectedTVShowsCollection = tvShowsCollections[0]
+            destinationVC.url = URLs.popularTvShows
             cell.state = index
+            destinationVC.flag = index
+            destinationVC.title = K.IBOutlets.contentTypes[3] + " TV Shows"
             
         case 5:
             cell.popularPeople = popularPeople?.results
-            cell.genreNameLabel.text = K.IBOutlets.moviesTypes[4]
+            cell.genreNameLabel.text = K.IBOutlets.contentTypes[4]
+            destinationVC.url = URLs.popularPeopleURL
+            destinationVC.selectedPeopleCollection = popularPeople
+            destinationVC.flag = index
+            destinationVC.title = K.IBOutlets.contentTypes[4]
             cell.state = index
             
         default:

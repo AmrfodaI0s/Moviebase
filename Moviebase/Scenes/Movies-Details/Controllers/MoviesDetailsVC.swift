@@ -9,7 +9,7 @@
 import UIKit
 class MoviesDetailsVC: BaseVC {
     
-    var movieDetails: Result?
+    var movieDetails: MoviesResult?
     @IBOutlet weak var sliderCollection: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     

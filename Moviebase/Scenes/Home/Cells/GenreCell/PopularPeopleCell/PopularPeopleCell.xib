@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HjT-aH-tZ7">
                         <rect key="frame" x="0.0" y="0.0" width="180" height="148"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="9Wp-e0-pf7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="9Wp-e0-pf7">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="6Tj-6N-ldt"/>
@@ -60,6 +60,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="poster" width="640" height="960"/>
+        <image name="image-placeholder" width="175" height="175"/>
     </resources>
 </document>

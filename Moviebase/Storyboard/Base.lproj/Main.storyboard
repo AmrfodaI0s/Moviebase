@@ -243,7 +243,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Mt-FZ-TJC" firstAttribute="bottom" secondItem="diB-NT-TZ1" secondAttribute="bottom" id="ILS-8r-aRY"/>
+                            <constraint firstAttribute="bottom" secondItem="diB-NT-TZ1" secondAttribute="bottom" id="ILS-8r-aRY"/>
                             <constraint firstItem="diB-NT-TZ1" firstAttribute="leading" secondItem="6Mt-FZ-TJC" secondAttribute="leading" id="ezQ-df-L5z"/>
                             <constraint firstItem="diB-NT-TZ1" firstAttribute="top" secondItem="C6A-xt-U1y" secondAttribute="top" id="kvd-qt-r1c"/>
                             <constraint firstItem="6Mt-FZ-TJC" firstAttribute="trailing" secondItem="diB-NT-TZ1" secondAttribute="trailing" id="qNR-gX-hze"/>

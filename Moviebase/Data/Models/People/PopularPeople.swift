@@ -11,7 +11,7 @@ import Foundation
 // MARK: - PopularPeople
 struct PopularPeople: Codable {
     var page, totalPages: Int?
-    var results: [PeopleResult]?
+    var results: [PeopleResult]
 
     enum CodingKeys: String, CodingKey {
         case page

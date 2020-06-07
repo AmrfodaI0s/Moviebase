@@ -54,7 +54,7 @@ extension KingfisherWrapper where Base: NSButton {
         placeholder: KFCrossPlatformImage? = nil,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
+        completionHandler: ((MoviesResult<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
         var mutatingSelf = self
         guard let source = source else {
@@ -149,7 +149,7 @@ extension KingfisherWrapper where Base: NSButton {
         placeholder: KFCrossPlatformImage? = nil,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
+        completionHandler: ((MoviesResult<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
         return setImage(
             with: resource?.convertToSource(),
@@ -175,7 +175,7 @@ extension KingfisherWrapper where Base: NSButton {
         placeholder: KFCrossPlatformImage? = nil,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
+        completionHandler: ((MoviesResult<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
         var mutatingSelf = self
         guard let source = source else {
@@ -270,7 +270,7 @@ extension KingfisherWrapper where Base: NSButton {
         placeholder: KFCrossPlatformImage? = nil,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
+        completionHandler: ((MoviesResult<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
         return setAlternateImage(
             with: resource?.convertToSource(),

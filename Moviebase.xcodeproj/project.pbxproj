@@ -25,7 +25,6 @@
 		AA5DD82524731BBF008B5B38 /* TLYShyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD82224731BBF008B5B38 /* TLYShyViewController.m */; };
 		AA5DD82624731BBF008B5B38 /* TLYShyScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD82324731BBF008B5B38 /* TLYShyScrollViewController.m */; };
 		AA6C76012482BD2C0009AFFB /* PopularPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C76002482BD2C0009AFFB /* PopularPeople.swift */; };
-		AA6C76032482BDF00009AFFB /* PeopleDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C76022482BDF00009AFFB /* PeopleDataServices.swift */; };
 		AA7E1B96247FC2CF00312381 /* PopularPeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E1B94247FC2CF00312381 /* PopularPeopleCell.swift */; };
 		AA7E1B97247FC2CF00312381 /* PopularPeopleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7E1B95247FC2CF00312381 /* PopularPeopleCell.xib */; };
 		AA969F242468F84B00D63378 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969F232468F84B00D63378 /* SideMenuVC.swift */; };
@@ -37,7 +36,6 @@
 		AAC5435A246F17A200168302 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC54359246F17A200168302 /* Helper.swift */; };
 		AAC5435C246F711E00168302 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC5435B246F711E00168302 /* Movies.swift */; };
 		AACB13AE24751826007C7944 /* Popular.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB13AD24751826007C7944 /* Popular.swift */; };
-		AACB13B124751969007C7944 /* TVShowsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB13B024751969007C7944 /* TVShowsServices.swift */; };
 		AACB93AB246A1A1100D32855 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB93A9246A1A1100D32855 /* SliderCell.swift */; };
 		AACB93AC246A1A1100D32855 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACB93AA246A1A1100D32855 /* SliderCell.xib */; };
 		AACB93AF246A1FAD00D32855 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB93AE246A1FAD00D32855 /* GradientView.swift */; };
@@ -46,7 +44,7 @@
 		AACB93BC246A689E00D32855 /* SliderImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACB93BA246A689E00D32855 /* SliderImageCell.xib */; };
 		AAD258BC246DEB59003C8AEA /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD258BB246DEB59003C8AEA /* Endpoints.swift */; };
 		AAD258C0246DED6C003C8AEA /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD258BE246DED6C003C8AEA /* ImageService.swift */; };
-		AAD258C8246E2016003C8AEA /* MovieServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD258C7246E2016003C8AEA /* MovieServices.swift */; };
+		AAD258C8246E2016003C8AEA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD258C7246E2016003C8AEA /* API.swift */; };
 		AADE60C524770681008FD255 /* CollectionsVC + CollectionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE60C424770681008FD255 /* CollectionsVC + CollectionDelegates.swift */; };
 		AADEAADB2475CD07003C77B0 /* Navbar + GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEAADA2475CD07003C77B0 /* Navbar + GradientView.swift */; };
 		AADEAADE2475D2C2003C77B0 /* CollectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEAADD2475D2C2003C77B0 /* CollectionsVC.swift */; };
@@ -95,7 +93,6 @@
 		AA5DD82224731BBF008B5B38 /* TLYShyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyViewController.m; sourceTree = "<group>"; };
 		AA5DD82324731BBF008B5B38 /* TLYShyScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyScrollViewController.m; sourceTree = "<group>"; };
 		AA6C76002482BD2C0009AFFB /* PopularPeople.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPeople.swift; sourceTree = "<group>"; };
-		AA6C76022482BDF00009AFFB /* PeopleDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDataServices.swift; sourceTree = "<group>"; };
 		AA7E1B94247FC2CF00312381 /* PopularPeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPeopleCell.swift; sourceTree = "<group>"; };
 		AA7E1B95247FC2CF00312381 /* PopularPeopleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularPeopleCell.xib; sourceTree = "<group>"; };
 		AA969F232468F84B00D63378 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
@@ -107,7 +104,6 @@
 		AAC54359246F17A200168302 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		AAC5435B246F711E00168302 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		AACB13AD24751826007C7944 /* Popular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular.swift; sourceTree = "<group>"; };
-		AACB13B024751969007C7944 /* TVShowsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsServices.swift; sourceTree = "<group>"; };
 		AACB93A9246A1A1100D32855 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		AACB93AA246A1A1100D32855 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		AACB93AE246A1FAD00D32855 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -116,7 +112,7 @@
 		AACB93BA246A689E00D32855 /* SliderImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderImageCell.xib; sourceTree = "<group>"; };
 		AAD258BB246DEB59003C8AEA /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		AAD258BE246DED6C003C8AEA /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		AAD258C7246E2016003C8AEA /* MovieServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServices.swift; sourceTree = "<group>"; };
+		AAD258C7246E2016003C8AEA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		AADE60C424770681008FD255 /* CollectionsVC + CollectionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionsVC + CollectionDelegates.swift"; sourceTree = "<group>"; };
 		AADEAADA2475CD07003C77B0 /* Navbar + GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navbar + GradientView.swift"; sourceTree = "<group>"; };
 		AADEAADD2475D2C2003C77B0 /* CollectionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsVC.swift; sourceTree = "<group>"; };
@@ -463,9 +459,7 @@
 		AAD258C6246E1FEC003C8AEA /* DataServices */ = {
 			isa = PBXGroup;
 			children = (
-				AAD258C7246E2016003C8AEA /* MovieServices.swift */,
-				AACB13B024751969007C7944 /* TVShowsServices.swift */,
-				AA6C76022482BDF00009AFFB /* PeopleDataServices.swift */,
+				AAD258C7246E2016003C8AEA /* API.swift */,
 			);
 			path = DataServices;
 			sourceTree = "<group>";
@@ -624,8 +618,7 @@
 				AA969F2A2468FC1F00D63378 /* NavigationVC.swift in Sources */,
 				AAC5435C246F711E00168302 /* Movies.swift in Sources */,
 				AAB6B0B1246B2CD10004B1FB /* GenreImageCell.swift in Sources */,
-				AACB13B124751969007C7944 /* TVShowsServices.swift in Sources */,
-				AAD258C8246E2016003C8AEA /* MovieServices.swift in Sources */,
+				AAD258C8246E2016003C8AEA /* API.swift in Sources */,
 				AA5DD81724731B9D008B5B38 /* UIViewController+BetterLayoutGuides.m in Sources */,
 				AACB93B1246A260400D32855 /* HomeVC + Collection.swift in Sources */,
 				AA5DD80924731722008B5B38 /* TLYShyNavBarManager.m in Sources */,
@@ -652,7 +645,6 @@
 				AA51C0F42473C5F700DA5D99 /* GenreCell.swift in Sources */,
 				AA5DD82524731BBF008B5B38 /* TLYShyViewController.m in Sources */,
 				AACB93AF246A1FAD00D32855 /* GradientView.swift in Sources */,
-				AA6C76032482BDF00009AFFB /* PeopleDataServices.swift in Sources */,
 				AA969F2E2468FE3F00D63378 /* Constants.swift in Sources */,
 				AA5DD81924731B9D008B5B38 /* TLYDelegateProxy.m in Sources */,
 				AA5DD81A24731B9D008B5B38 /* UIScrollView+Helpers.m in Sources */,

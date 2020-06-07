@@ -69,7 +69,7 @@ class Helper {
     class func displayImage(imageView: UIImageView?, url: String) {
         let Url =  URLs.ImageRequestURL_w1280 + url
         imageView?.kf.indicatorType = .activity
-        imageView?.kf.setImage(with: URL(string : Url ), options: [.transition(.flipFromRight(0.3))])
+        imageView?.kf.setImage(with: URL(string : Url), placeholder: UIImage(named: "image-placeholder"), options: [.transition(.flipFromRight(0.3))])
     }
     //MARK: - Gesture Dismiss from Top
     func dismissTransition(vc: UIViewController,_ sender:  UIPanGestureRecognizer) {

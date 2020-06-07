@@ -11,16 +11,12 @@ import UIKit
 extension HomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return K.IBOutlets.moviesTypes.count + 1
-        
+        return K.IBOutlets.contentTypes.count + 1
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
            return UIEdgeInsets(top: 0
                , left: 0, bottom: 0, right: 0)
        }
-    func configureSliderCollection() {
-      
-    }
 }
 //MARK: - Collection Delegate
 extension HomeVC: UICollectionViewDelegateFlowLayout {

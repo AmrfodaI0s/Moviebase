@@ -23,7 +23,7 @@ struct K {
         static let popularPeopleCell = "popularPeopleCell"
     }
     struct IBOutlets{
-        static let moviesTypes = ["Popular","Now Playing","Upcoming", "Popular", "Popular People"]
+        static let contentTypes = ["Popular","Now Playing","Upcoming", "Popular", "Popular People"]
 
     }
     enum ContentType: String {

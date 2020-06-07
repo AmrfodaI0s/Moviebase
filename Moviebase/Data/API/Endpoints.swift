@@ -15,7 +15,7 @@ class URLs {
     static let baseURL = "https://api.themoviedb.org/3/"
     
     ///mark:- Popular People URL, takes 3 parameters(API_Key, Language, Page)
-    static let PopularPeopleURL = baseURL + "person/popular?api_key=" + URLs.API_Key + "&language=en-US&page="
+    static let popularPeopleURL = baseURL + "person/popular?api_key=" + URLs.API_Key + "&language=en-US&page="
     
     ///mark:- Requesting image URL
     static let ImageRequestURL_w500 = "https://image.tmdb.org/t/p/w500"

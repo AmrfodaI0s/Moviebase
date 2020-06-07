@@ -16,7 +16,7 @@ class SliderCell: UICollectionViewCell {
     @IBOutlet weak var pageController: UIPageControl!
     var state  = 0
     var index = 0
-    var trendingMovies: [Result]? {
+    var trendingMovies: [MoviesResult]? {
         didSet {
             sliderImageCollection.reloadData()
             MovieNameLabel.text = trendingMovies?[0].originalTitle

@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-struct MovieServices {
-    static func getMoreMovies<T : Codable>(url: String,_ page: Int, completion: @escaping (_ error: Error?,_ result : T?) -> ()){
+struct DataServices {
+    static func GET<T: Codable>(url: String,_ page: Int, completion: @escaping (_ error: Error?,_ result : T?) -> ()){
         AF.request(url + String(page)).responseJSON { (response) in
             do {
                 let jsonDecoder = try JSONDecoder().decode(T.self, from: response.data!)

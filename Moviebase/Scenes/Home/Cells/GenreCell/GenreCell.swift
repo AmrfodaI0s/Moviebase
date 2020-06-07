@@ -16,22 +16,22 @@ class GenreCell: UICollectionViewCell {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     var state: Int?
-    var popularMovies: [Result]? {
+    var popularMovies: [MoviesResult]? {
         didSet {
             genreCollection.reloadData()
         }
     }
-    var nowPlayingMovies: [Result]? {
+    var nowPlayingMovies: [MoviesResult]? {
         didSet {
             genreCollection.reloadData()
         }
     }
-    var upComingMovies: [Result]? {
+    var upComingMovies: [MoviesResult]? {
         didSet {
             genreCollection.reloadData()
         }
     }
-    var popularTVShows: [Results]? {
+    var popularTVShows: [TVShowsResults]? {
         didSet {
             genreCollection.reloadData()
         }
@@ -47,7 +47,7 @@ class GenreCell: UICollectionViewCell {
     
     var selectedCollection : (()->())?
     
-    var selectedMovie: ((_ movieDetails: Result?) ->())?
+    var selectedMovie: ((_ movieDetails: MoviesResult?) ->())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -98,7 +98,7 @@ extension GenreCell: UICollectionViewDataSource {
             cell.movieRatingLabel.text = String(describing: popularTVShows?[indexPath.row].voteAverage ?? 0.0)
             return cell
         case 5:
-            topConstraint.constant = -30
+            //topConstraint.constant = -30
             Helper.displayImage(imageView: popularCell.iv, url: self.popularPeople?[indexPath.row].profilePath ?? "")
             popularCell.personNameLabel.text = self.popularPeople?[indexPath.row].name
            return popularCell
@@ -111,6 +111,7 @@ extension GenreCell: UICollectionViewDataSource {
         case 1: selectedMovie?(popularMovies?[indexPath.row])
         case 2 : selectedMovie?(nowPlayingMovies?[indexPath.row])
         case 3 : selectedMovie?(upComingMovies?[indexPath.row])
+        //case 4 : selectedMovie?(popularTVShows?[indexPath.row])case 3 : selectedMovie?(upComingMovies?[indexPath.row])
         //case 4 : selectedMovie?(popularTVShows?[indexPath.row])
         default :
             return
