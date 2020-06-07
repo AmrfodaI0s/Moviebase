@@ -17,7 +17,7 @@ class Helper {
         if let _ = view.viewWithTag(tag){
         } else {
             let overView = UIView()
-            overView.frame = UIApplication.shared.statusBarFrame
+            //overView.frame = UIApplication.shared.statusBarFrame
             overView.backgroundColor = withColor
             overView.tag = tag
             view.addSubview(overView)

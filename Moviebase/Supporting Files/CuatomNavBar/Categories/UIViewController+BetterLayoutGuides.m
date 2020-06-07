@@ -18,7 +18,7 @@
         return self.parentViewController.tly_topLayoutGuide;
     }
     else {
-        return self.topLayoutGuide;
+        return self.tly_topLayoutGuide;
     }
 }
 
@@ -30,7 +30,7 @@
         return self.parentViewController.tly_bottomLayoutGuide;
     }
     else {
-        return self.bottomLayoutGuide;
+        return self.tly_topLayoutGuide;
     }
 }
 

@@ -29,7 +29,7 @@ extension CollectionVC : UICollectionViewDataSource {
         }
         return cell
     }
-    
+    //MARK: - will display
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         var count: Int?
         if flag == 4 {
@@ -41,15 +41,22 @@ extension CollectionVC : UICollectionViewDataSource {
             count = moviesResults?.count
         }
         if indexPath.row == count! - 1 {
-            //getMoreDataX()
             getMore()
         }
     }
-    
+    //MARK: - did selelect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.moviesDetailsVC) as! ContentDetailsVC
+        if flag == 4 {
+            let selectedTVShow = tvShowaResults?[indexPath.row]
+            vc.tvShowDetails = selectedTVShow
+        } else if flag == 5 {
+            let selectedActor = popularPeopleResults?[indexPath.row]
+            vc.actorDetails = selectedActor
+        } else {
         let selectedMovie = moviesResults?[indexPath.row]
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.moviesDetailsVC) as! MoviesDetailsVC
-        vc.movieDetails = selectedMovie
+            vc.movieDetails = selectedMovie
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

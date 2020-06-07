@@ -92,13 +92,8 @@ extension HomeVC {
         let tvShowsCollections = [popularTVShows]
         let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.collectionVC) as! CollectionVC
         
-        let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.moviesDetailsVC) as! MoviesDetailsVC
-        
+        let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.moviesDetailsVC) as! ContentDetailsVC
         cell.selectedCollection = { self.navigationController?.pushViewController(destinationVC, animated: true) }
-        cell.selectedMovie =  { [weak self] selected in
-            detailsVC.movieDetails = selected
-            self?.navigationController?.pushViewController(detailsVC, animated: true)
-        }
         switch index {
         case 1:
             cell.popularMovies = popularMovies?.results
@@ -108,6 +103,10 @@ extension HomeVC {
             destinationVC.url = URLs.popularMovies
             cell.state = index
             destinationVC.title = K.IBOutlets.contentTypes[0] + " Movies"
+            cell.selectedMovie =  { [weak self] selected in
+                detailsVC.movieDetails = selected
+                self?.navigationController?.pushViewController(detailsVC, animated: true)
+            }
             
         case 2:
             cell.nowPlayingMovies = nowPlayingMovies?.results
@@ -117,7 +116,10 @@ extension HomeVC {
             destinationVC.title = K.IBOutlets.contentTypes[1] + " Movies"
             destinationVC.url = URLs.nowPlayingMovies
             cell.state = index
-            
+            cell.selectedMovie =  { [weak self] selected in
+                detailsVC.movieDetails = selected
+                self?.navigationController?.pushViewController(detailsVC, animated: true)
+            }
         case 3 :
             cell.upComingMovies = upComingMovies?.results
             cell.genreType_label.text = K.ContentType.movie.rawValue
@@ -126,7 +128,10 @@ extension HomeVC {
             destinationVC.url = URLs.upComingMovies
             destinationVC.title = K.IBOutlets.contentTypes[2] + " Movies"
             cell.state = index
-            
+            cell.selectedMovie =  { [weak self] selected in
+                detailsVC.movieDetails = selected
+                self?.navigationController?.pushViewController(detailsVC, animated: true)
+            }
         case 4:
             cell.popularTVShows = popularTVShows?.results
             cell.genreType_label.text = K.ContentType.tvSeries.rawValue
@@ -136,7 +141,10 @@ extension HomeVC {
             cell.state = index
             destinationVC.flag = index
             destinationVC.title = K.IBOutlets.contentTypes[3] + " TV Shows"
-            
+            cell.selectedTVShow =  { [weak self] selected in
+                detailsVC.tvShowDetails = selected
+                self?.navigationController?.pushViewController(detailsVC, animated: true)
+            }
         case 5:
             cell.popularPeople = popularPeople?.results
             cell.genreNameLabel.text = K.IBOutlets.contentTypes[4]
@@ -145,6 +153,10 @@ extension HomeVC {
             destinationVC.flag = index
             destinationVC.title = K.IBOutlets.contentTypes[4]
             cell.state = index
+            cell.selectedActor =  { [weak self] selected in
+                detailsVC.actorDetails = selected
+                self?.navigationController?.pushViewController(detailsVC, animated: true)
+            }
             
         default:
             return

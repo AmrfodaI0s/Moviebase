@@ -21,6 +21,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="udQ-hn-4kA">
                                 <rect key="frame" x="0.0" y="0.0" width="289" height="356"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBx-t1-1M2" customClass="GradientView" customModule="Moviebase" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="228" width="289" height="128"/>
