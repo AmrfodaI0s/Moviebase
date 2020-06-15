@@ -23,10 +23,10 @@ struct K {
         static let popularPeopleCell = "popularPeopleCell"
         static let menuCell = "menuCell"
         static let toCollectionVC = "toCollectionVC"
+        static let toContentDetails = "toContentDetails"
     }
-    struct IBOutlets{
+    struct IBOutlets {
         static let contentTypes = ["Popular","Now Playing","Upcoming", "Popular", "Popular People"]
-
     }
     enum ContentType: String {
        case movie = "MOVIES"

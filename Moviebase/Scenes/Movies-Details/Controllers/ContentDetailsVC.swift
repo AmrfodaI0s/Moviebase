@@ -10,9 +10,17 @@ import UIKit
 
 class ContentDetailsVC: BaseVC {
     
-    var pageControl : UIPageControl = UIPageControl(frame: CGRect(x: 150 / 2, y: 220, width: 200, height: 20))
+    var pageControl : UIPageControl = UIPageControl(frame: CGRect(x: 136, y: 220, width: 200, height: 20))
     @IBOutlet weak var mainView: UIView!
-    var movieImages: [Backdrop]?
+    var movieImages: [Backdrop]? {
+        didSet {
+            guard let pagesCount = self.movieImages?.count else { return }
+                print(pagesCount)
+            self.pageControl.numberOfPages = pagesCount
+            configurePageControl()
+
+        }
+    }
     lazy var profileImage: UIImageView = {
         var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = true
@@ -32,7 +40,6 @@ class ContentDetailsVC: BaseVC {
         didSet {
             flag = 0
             getMovieImages()
-            configurePageControl()
         }
     }
     var tvShowDetails: TVShowsResults? {
@@ -45,11 +52,14 @@ class ContentDetailsVC: BaseVC {
     }}
     @IBOutlet weak var sliderCollection: UICollectionView! {
         didSet {
+
            let _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(Slider_Timer), userInfo: nil, repeats: true)
             }
     }
     @objc func Slider_Timer()  {
-        if state < (10 ) {
+        guard let imagesCount = self.movieImages?.count else { return }
+
+        if state < imagesCount {
             let index = IndexPath(item: state, section: 0)
             sliderCollection.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
             state += 1
@@ -63,18 +73,12 @@ class ContentDetailsVC: BaseVC {
     override func didLoded() {
         sliderCollection.register(UINib(nibName: "SliderDetailsCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.detailsSlider)
         
-        scrollView.delegate = self
-        self.pageControl.currentPage = 0
-        self.pageControl.tintColor = .clear
-        self.pageControl.pageIndicatorTintColor = .white
-        self.pageControl.currentPageIndicatorTintColor = .yellow
-        self.mainView.addSubview(pageControl)
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.mainView.addSubview(profileImage)
-        
+        self.mainView.addSubview(pageControl)
+        configurePageControl()
         if flag == 0 {
             title = movieDetails?.originalTitle
             Helper.displayImage(imageView: profileImage, url: movieDetails?.posterPath)
@@ -101,12 +105,10 @@ extension ContentDetailsVC {
                 if images.count > 0 {
                     self.movieImages = images
                     self.sliderCollection?.reloadData()
-                    print(movieImages?.backdrops)
                 } else {
                     if let images = movieImages?.posters {
                     self.movieImages = images
                     self.sliderCollection?.reloadData()
-                    print(self.movieImages)
                     }
                 }
             }

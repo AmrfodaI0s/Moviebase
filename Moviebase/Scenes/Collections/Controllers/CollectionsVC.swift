@@ -9,7 +9,6 @@ import UIKit
 
 class CollectionVC: BaseVC {
     var url = ""
-    
     var selectedMoviesCollection: Movies? {
         didSet {
             moviesResults = selectedMoviesCollection?.results

@@ -270,11 +270,12 @@
                     <navigationItem key="navigationItem" id="aFl-qR-Oa6"/>
                     <connections>
                         <outlet property="collectionView" destination="diB-NT-TZ1" id="uQ2-QA-i2d"/>
+                        <segue destination="rrj-7Z-eyV" kind="show" identifier="toContentDetails" id="IoI-vY-2Lx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="276-cf-3Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5213.6000000000004" y="-256.82158920539734"/>
+            <point key="canvasLocation" x="5212" y="-330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d2k-5D-C1Q">
@@ -320,7 +321,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ubs-z9-zTm"/>
+        <segue reference="q8F-LS-Tw9"/>
+        <segue reference="IoI-vY-2Lx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="close_icon" width="32" height="32"/>

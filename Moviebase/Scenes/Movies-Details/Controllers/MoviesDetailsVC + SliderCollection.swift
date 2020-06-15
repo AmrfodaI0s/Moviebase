@@ -14,35 +14,39 @@ extension ContentDetailsVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.detailsSlider, for: indexPath) as? SliderDetailsCell else { return UICollectionViewCell() }
+        
         if let image = movieImages?[indexPath.row].filePath {
             Helper.displayImage(imageView: cell.iv, url: image)
         } else {
             cell.iv.image = #imageLiteral(resourceName: "image-placeholder")
         }
         
-        
         return cell
     }
 }
 extension ContentDetailsVC: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width:  view.frame.size.width, height: 240)
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == sliderCollection {
             let index = Int(self.sliderCollection.contentOffset.x / self.sliderCollection.frame.width)
             self.pageControl.currentPage = index
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         state = indexPath.row
     }
 }
-extension ContentDetailsVC: UIScrollViewDelegate {
+extension ContentDetailsVC {
+    
     func configurePageControl() {
-        if let pagesCount = self.movieImages?.count {
-            self.pageControl.numberOfPages = pagesCount
-            print(pagesCount)
-        } else { self.pageControl.numberOfPages = 5 }
+        self.pageControl.currentPage = 0
+        self.pageControl.tintColor = .clear
+        self.pageControl.pageIndicatorTintColor = .white
+        self.pageControl.currentPageIndicatorTintColor = .yellow
     }
 }
