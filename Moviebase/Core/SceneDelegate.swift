@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AKSideMenu
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -18,18 +18,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        //let navigationController: UINavigationController = UINavigationController.init(rootViewController: RootViewController.init(contentViewController: HomeVC(), leftMenuViewController: SideMenuVC(), rightMenuViewController: nil))
+        //let leftMenuViewController: LeftMenuViewController = LeftMenuViewController.init()
+        //let rightMenuViewController: RightMenuViewController = RightMenuViewController.init()
+
+        // Create side menu controller
+        //let sideMenuViewController: AKSideMenu = AKSideMenu(contentViewController: navigationController, leftMenuViewController: SideMenuVC(), rightMenuViewController: nil)
+
+        // Make it a root controller
+        //window!.rootViewController = sideMenuViewController
+
+        //window!.backgroundColor = UIColor.white
+        //window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
+        
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+//        let navigationController: UINavigationController = UINavigationController.init(rootViewController: RootViewController.init(contentViewController: HomeVC(), leftMenuViewController: SideMenuVC(), rightMenuViewController: nil))
+//        //let leftMenuViewController: LeftMenuViewController = LeftMenuViewController.init()
+//        //let rightMenuViewController: RightMenuViewController = RightMenuViewController.init()
+//
+//        // Create side menu controller
+//        let sideMenuViewController: AKSideMenu = AKSideMenu(contentViewController: navigationController, leftMenuViewController: SideMenuVC(), rightMenuViewController: nil)
+//
+//        // Make it a root controller
+//        window!.rootViewController = sideMenuViewController
+//
+//        window!.backgroundColor = UIColor.white
+//        window?.makeKeyAndVisible()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

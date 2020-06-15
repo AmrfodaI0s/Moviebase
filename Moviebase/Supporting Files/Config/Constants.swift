@@ -22,6 +22,7 @@ struct K {
         static let detailsSlider = "detailsSlider"
         static let popularPeopleCell = "popularPeopleCell"
         static let menuCell = "menuCell"
+        static let toCollectionVC = "toCollectionVC"
     }
     struct IBOutlets{
         static let contentTypes = ["Popular","Now Playing","Upcoming", "Popular", "Popular People"]

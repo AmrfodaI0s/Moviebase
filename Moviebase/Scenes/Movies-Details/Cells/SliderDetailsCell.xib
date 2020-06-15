@@ -16,9 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="277" height="144"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1767031" translatesAutoresizingMaskIntoConstraints="NO" id="snV-rE-hkC">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="snV-rE-hkC">
                         <rect key="frame" x="0.0" y="0.0" width="277" height="144"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
             </view>
@@ -30,10 +29,13 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="277" height="144"/>
+            <connections>
+                <outlet property="iv" destination="snV-rE-hkC" id="L1y-pG-oFs"/>
+            </connections>
             <point key="canvasLocation" x="64.492753623188406" y="135.9375"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="1767031" width="384" height="640"/>
+        <image name="image-placeholder" width="175" height="175"/>
     </resources>
 </document>

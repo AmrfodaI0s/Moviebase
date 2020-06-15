@@ -13,12 +13,26 @@ class SideMenuVC: BaseVC {
     @IBOutlet weak var iv: UIImageView!
     @IBOutlet weak var menuTableView: UITableView! {
         didSet {
-            menuTableView.register(UINib(nibName: "MenuTableViewCell", bundle: nil), forCellReuseIdentifier: K.Storyboard.menuCell)
+            menuTableView.register(UINib(nibName: "MenuTableViewCell", bundle: nil),
+                                   forCellReuseIdentifier: K.Storyboard.menuCell)
             menuTableView.rowHeight = 48
         }
     }
+    var result : [MoviesResult]? = []
+    var flag: Int?
+    var observer = 1
+    var trendingMovies: [MoviesResult]? {
+        didSet {
+            result = trendingMovies
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(false)
+        self.navigationController?.navigationBar.tintColor = .yellow
+        
+    }
+    var popularMovies: Movies?
     let transform = CGAffineTransform.identity
-//    let images: [UIImage] = [#imageLiteral(resourceName: "movies"),#imageLiteral(resourceName: "movies"),#imageLiteral(resourceName: "series"),#imageLiteral(resourceName: "play"),#imageLiteral(resourceName: "group14"),#imageLiteral(resourceName: "profile"),#imageLiteral(resourceName: "magnafire")]
     let images = ["home","movies","series","play","group14","profile","magnafire"]
     let labels = ["Home",
                   "Popular Movies",
@@ -27,17 +41,22 @@ class SideMenuVC: BaseVC {
                   "Popular TV-Shows",
                   "Popular People",
                   "Search"]
+    
     override func didLoded() {
-        self.iv.transform = transform.rotated(by: 180 * CGFloat(Double.pi))
-        self.iv.transform = transform.rotated(by: -1 * CGFloat(Double.pi))
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-             return .lightContent
-       }
+    func reloadData() {
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+    }
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         sideMenuViewController?.hideMenuViewController()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.iv.transform = transform.rotated(by: 180 * CGFloat(Double.pi))
+        self.iv.transform = transform.rotated(by: -1 * CGFloat(Double.pi))
+    }
 
 }
 extension SideMenuVC: UITableViewDataSource {
@@ -52,10 +71,31 @@ extension SideMenuVC: UITableViewDataSource {
         cell.genreTypeLabel.text = labels[indexPath.row]
         return cell
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 extension SideMenuVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.collectionVC) as! CollectionVC
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        vc.contentID = 90
+        vc.viewDidLoad()
+        sideMenuViewController?.hideMenuViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+   
+//    func selectedCell(index: Int, cell: UITableViewCell) {
+//        switch index {
+//        case 1:
+//
+//        default:
+//
+//        }
+//    }
+
+    
 }

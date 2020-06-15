@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftSpinner
 
 class SliderCell: UICollectionViewCell {
     
@@ -49,7 +48,7 @@ extension SliderCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.sliderImageCell, for: indexPath) as! SliderImageCell
-        Helper.displayImage(imageView: cell.poster_iv, url: trendingMovies?[indexPath.row].posterPath ?? "")
+        Helper.displayImage(imageView: cell.poster_iv, url: trendingMovies?[indexPath.row].posterPath)
         return cell
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

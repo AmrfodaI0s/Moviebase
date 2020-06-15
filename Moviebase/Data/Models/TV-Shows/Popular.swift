@@ -51,11 +51,3 @@ struct TVShowsResults: Codable {
     }
 }
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case ja = "ja"
-    case tr = "tr"
-    case zh = "zh"
-    case es = "es"
-    case th = "th"
-}

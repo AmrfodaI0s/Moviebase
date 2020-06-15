@@ -6,10 +6,10 @@
 //  Copyright © 2020 Eslam. All rights reserved.
 //
 import UIKit
-import SwiftSpinner
 
 class CollectionVC: BaseVC {
     var url = ""
+    
     var selectedMoviesCollection: Movies? {
         didSet {
             moviesResults = selectedMoviesCollection?.results
@@ -31,6 +31,8 @@ class CollectionVC: BaseVC {
                currentPage = 1
            }
        }
+    var closure: ((_ index: Int)->())?
+    var contentID: Int?
     var flag = 0
     var moviesResults : [MoviesResult]? = []
     var tvShowaResults : [TVShowsResults]? = []
@@ -40,18 +42,17 @@ class CollectionVC: BaseVC {
     var lastPage = 0
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            //collectionView.addSubview(refresher)
             collectionView.register(UINib(nibName: "CollectionsCell", bundle: nil), forCellWithReuseIdentifier: K.Storyboard.collectionsCell)
         }
     }
     override func didLoded() {
-        self.shyNavBarManager.scrollView = collectionView
+        getData()
     }
     //MARK: - Paginate to get more requested data
-     func getMore() {
+    func getMore(index: Int) {
         guard !isLoading else { return }
         guard currentPage < lastPage else { return }
-        SwiftSpinner.show("")
+        Helper.Spinner(hidden: false, "Loading")
         isLoading = true
         if flag == 4 {
             DataServices.GET(url: url, currentPage+1) { (error, collection: TVShows?) in
@@ -71,6 +72,7 @@ class CollectionVC: BaseVC {
         }   else {
             DataServices.GET(url: url, currentPage+1) { (error, collection: Movies?) in
                 for data in collection!.results {
+                    self.lastPage = collection?.totalPages ?? 0
                     self.moviesResults?.append(data)
                 }
                 self.didLoaded(with: self.selectedMoviesCollection?.totalPages ?? 0)
@@ -79,10 +81,29 @@ class CollectionVC: BaseVC {
     }
     func didLoaded(with lastPage: Int) {
         self.isLoading = false
-        SwiftSpinner.hide()
+        Helper.Spinner(hidden: true, nil)
         self.collectionView.reloadData()
         self.currentPage += 1
         self.lastPage = lastPage
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        //self.navigationController?.hidesBarsOnSwipe = false
+    }
+    func getData() {
+        //flag = contentID ?? 18
+        if contentID == 90 {
+            flag = contentID ?? 91
+            print(flag + 9)
+            url = URLs.popularMovies
+            currentPage = 1
+            lastPage = 2
+            getMore(index: flag)
+        }
+        else {
+            print(contentID ?? 65678)
+        }
     }
 
 }

@@ -39,7 +39,7 @@ class GenreCell: UICollectionViewCell {
     var selectedCollection : (()->())?
     
     var selectedMovie: ((_ movieDetails: MoviesResult?) ->())?
-    var selectedTVShow: ((_ movieDetails: TVShowsResults?) ->())?
+    var selectedTVShow: ((_ tvShowbDetails: TVShowsResults?) ->())?
     var selectedActor: ((_ actorDetails: PeopleResult?) ->())?
 
     override func awakeFromNib() {
@@ -52,4 +52,5 @@ class GenreCell: UICollectionViewCell {
     @IBAction func showCollectionButtonPressed(_ sender: UIButton) {
         selectedCollection?()
     }
+    
 }

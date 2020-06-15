@@ -16,14 +16,6 @@
 		AA52272F2468EBEE00209793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA52272D2468EBEE00209793 /* Main.storyboard */; };
 		AA5227312468EBF000209793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5227302468EBF000209793 /* Assets.xcassets */; };
 		AA5227342468EBF000209793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5227322468EBF000209793 /* LaunchScreen.storyboard */; };
-		AA5DD80924731722008B5B38 /* TLYShyNavBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD80524731722008B5B38 /* TLYShyNavBarManager.m */; };
-		AA5DD81724731B9D008B5B38 /* UIViewController+BetterLayoutGuides.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD81224731B9C008B5B38 /* UIViewController+BetterLayoutGuides.m */; };
-		AA5DD81824731B9D008B5B38 /* NSObject+TLYSwizzlingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD81424731B9D008B5B38 /* NSObject+TLYSwizzlingHelpers.m */; };
-		AA5DD81924731B9D008B5B38 /* TLYDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD81524731B9D008B5B38 /* TLYDelegateProxy.m */; };
-		AA5DD81A24731B9D008B5B38 /* UIScrollView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD81624731B9D008B5B38 /* UIScrollView+Helpers.m */; };
-		AA5DD82424731BBF008B5B38 /* TLYShyStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD82024731BBF008B5B38 /* TLYShyStatusBarController.m */; };
-		AA5DD82524731BBF008B5B38 /* TLYShyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD82224731BBF008B5B38 /* TLYShyViewController.m */; };
-		AA5DD82624731BBF008B5B38 /* TLYShyScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DD82324731BBF008B5B38 /* TLYShyScrollViewController.m */; };
 		AA6C76012482BD2C0009AFFB /* PopularPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C76002482BD2C0009AFFB /* PopularPeople.swift */; };
 		AA7E1B96247FC2CF00312381 /* PopularPeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E1B94247FC2CF00312381 /* PopularPeopleCell.swift */; };
 		AA7E1B97247FC2CF00312381 /* PopularPeopleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7E1B95247FC2CF00312381 /* PopularPeopleCell.xib */; };
@@ -33,6 +25,7 @@
 		AA969F2E2468FE3F00D63378 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969F2D2468FE3F00D63378 /* Constants.swift */; };
 		AAB6B0B1246B2CD10004B1FB /* GenreImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6B0AF246B2CD10004B1FB /* GenreImageCell.swift */; };
 		AAB6B0B2246B2CD10004B1FB /* GenreImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB6B0B0246B2CD10004B1FB /* GenreImageCell.xib */; };
+		AABB92A924970F5300921262 /* ZoomingTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB92A824970F5300921262 /* ZoomingTransition.swift */; };
 		AAC5435A246F17A200168302 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC54359246F17A200168302 /* Helper.swift */; };
 		AAC5435C246F711E00168302 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC5435B246F711E00168302 /* Movies.swift */; };
 		AAC7BA73248D4180000957E4 /* GenreCell+ Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC7BA72248D4180000957E4 /* GenreCell+ Collection.swift */; };
@@ -56,6 +49,8 @@
 		AAEEBF5A247E85BD00019BA6 /* MoviesDetailsVC + SliderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEEBF59247E85BD00019BA6 /* MoviesDetailsVC + SliderCollection.swift */; };
 		AAEEBF5D247E867700019BA6 /* SliderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEEBF5B247E867700019BA6 /* SliderDetailsCell.swift */; };
 		AAEEBF5E247E867700019BA6 /* SliderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEEBF5C247E867700019BA6 /* SliderDetailsCell.xib */; };
+		AAF11D312493C60100F29688 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF11D302493C60100F29688 /* MovieImage.swift */; };
+		AAF11D342493D1B400F29688 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF11D332493D1B400F29688 /* Language.swift */; };
 		EADFB200AF420674212C85EB /* libPods-Moviebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 444A706E62AC3C853FFD3AAF /* libPods-Moviebase.a */; };
 /* End PBXBuildFile section */
 
@@ -74,27 +69,6 @@
 		AA5227302468EBF000209793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA5227332468EBF000209793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA5227352468EBF000209793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA5DD80424731721008B5B38 /* Moviebase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moviebase-Bridging-Header.h"; sourceTree = "<group>"; };
-		AA5DD80524731722008B5B38 /* TLYShyNavBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyNavBarManager.m; sourceTree = "<group>"; };
-		AA5DD80624731722008B5B38 /* TLYShyNavBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyNavBarManager.h; sourceTree = "<group>"; };
-		AA5DD80724731722008B5B38 /* TLYShyNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyNavBar.h; sourceTree = "<group>"; };
-		AA5DD80824731722008B5B38 /* TLYShyNavBarFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyNavBarFade.h; sourceTree = "<group>"; };
-		AA5DD80F24731B9C008B5B38 /* UIViewController+BetterLayoutGuides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BetterLayoutGuides.h"; sourceTree = "<group>"; };
-		AA5DD81024731B9C008B5B38 /* NSObject+TLYSwizzlingHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TLYSwizzlingHelpers.h"; sourceTree = "<group>"; };
-		AA5DD81124731B9C008B5B38 /* UIScrollView+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Helpers.h"; sourceTree = "<group>"; };
-		AA5DD81224731B9C008B5B38 /* UIViewController+BetterLayoutGuides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BetterLayoutGuides.m"; sourceTree = "<group>"; };
-		AA5DD81324731B9D008B5B38 /* TLYDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYDelegateProxy.h; sourceTree = "<group>"; };
-		AA5DD81424731B9D008B5B38 /* NSObject+TLYSwizzlingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TLYSwizzlingHelpers.m"; sourceTree = "<group>"; };
-		AA5DD81524731B9D008B5B38 /* TLYDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYDelegateProxy.m; sourceTree = "<group>"; };
-		AA5DD81624731B9D008B5B38 /* UIScrollView+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Helpers.m"; sourceTree = "<group>"; };
-		AA5DD81C24731BBE008B5B38 /* TLYShyParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyParent.h; sourceTree = "<group>"; };
-		AA5DD81D24731BBF008B5B38 /* TLYShyChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyChild.h; sourceTree = "<group>"; };
-		AA5DD81E24731BBF008B5B38 /* TLYShyScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyScrollViewController.h; sourceTree = "<group>"; };
-		AA5DD81F24731BBF008B5B38 /* TLYShyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyViewController.h; sourceTree = "<group>"; };
-		AA5DD82024731BBF008B5B38 /* TLYShyStatusBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyStatusBarController.m; sourceTree = "<group>"; };
-		AA5DD82124731BBF008B5B38 /* TLYShyStatusBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyStatusBarController.h; sourceTree = "<group>"; };
-		AA5DD82224731BBF008B5B38 /* TLYShyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyViewController.m; sourceTree = "<group>"; };
-		AA5DD82324731BBF008B5B38 /* TLYShyScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyScrollViewController.m; sourceTree = "<group>"; };
 		AA6C76002482BD2C0009AFFB /* PopularPeople.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPeople.swift; sourceTree = "<group>"; };
 		AA7E1B94247FC2CF00312381 /* PopularPeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPeopleCell.swift; sourceTree = "<group>"; };
 		AA7E1B95247FC2CF00312381 /* PopularPeopleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularPeopleCell.xib; sourceTree = "<group>"; };
@@ -104,6 +78,7 @@
 		AA969F2D2468FE3F00D63378 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AAB6B0AF246B2CD10004B1FB /* GenreImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreImageCell.swift; sourceTree = "<group>"; };
 		AAB6B0B0246B2CD10004B1FB /* GenreImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreImageCell.xib; sourceTree = "<group>"; };
+		AABB92A824970F5300921262 /* ZoomingTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomingTransition.swift; sourceTree = "<group>"; };
 		AAC54359246F17A200168302 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		AAC5435B246F711E00168302 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		AAC7BA72248D4180000957E4 /* GenreCell+ Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenreCell+ Collection.swift"; sourceTree = "<group>"; };
@@ -127,6 +102,8 @@
 		AAEEBF59247E85BD00019BA6 /* MoviesDetailsVC + SliderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesDetailsVC + SliderCollection.swift"; sourceTree = "<group>"; };
 		AAEEBF5B247E867700019BA6 /* SliderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderDetailsCell.swift; sourceTree = "<group>"; };
 		AAEEBF5C247E867700019BA6 /* SliderDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderDetailsCell.xib; sourceTree = "<group>"; };
+		AAF11D302493C60100F29688 /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
+		AAF11D332493D1B400F29688 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,50 +174,6 @@
 			path = Moviebase;
 			sourceTree = "<group>";
 		};
-		AA5DD80324731383008B5B38 /* CuatomNavBar */ = {
-			isa = PBXGroup;
-			children = (
-				AA5DD81B24731BB2008B5B38 /* ShyControllers */,
-				AA5DD80E24731B86008B5B38 /* Categories */,
-				AA5DD80724731722008B5B38 /* TLYShyNavBar.h */,
-				AA5DD80824731722008B5B38 /* TLYShyNavBarFade.h */,
-				AA5DD80624731722008B5B38 /* TLYShyNavBarManager.h */,
-				AA5DD80524731722008B5B38 /* TLYShyNavBarManager.m */,
-				AA5DD80424731721008B5B38 /* Moviebase-Bridging-Header.h */,
-			);
-			path = CuatomNavBar;
-			sourceTree = "<group>";
-		};
-		AA5DD80E24731B86008B5B38 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				AA5DD81024731B9C008B5B38 /* NSObject+TLYSwizzlingHelpers.h */,
-				AA5DD81424731B9D008B5B38 /* NSObject+TLYSwizzlingHelpers.m */,
-				AA5DD81324731B9D008B5B38 /* TLYDelegateProxy.h */,
-				AA5DD81524731B9D008B5B38 /* TLYDelegateProxy.m */,
-				AA5DD81124731B9C008B5B38 /* UIScrollView+Helpers.h */,
-				AA5DD81624731B9D008B5B38 /* UIScrollView+Helpers.m */,
-				AA5DD80F24731B9C008B5B38 /* UIViewController+BetterLayoutGuides.h */,
-				AA5DD81224731B9C008B5B38 /* UIViewController+BetterLayoutGuides.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		AA5DD81B24731BB2008B5B38 /* ShyControllers */ = {
-			isa = PBXGroup;
-			children = (
-				AA5DD81D24731BBF008B5B38 /* TLYShyChild.h */,
-				AA5DD81C24731BBE008B5B38 /* TLYShyParent.h */,
-				AA5DD81E24731BBF008B5B38 /* TLYShyScrollViewController.h */,
-				AA5DD82324731BBF008B5B38 /* TLYShyScrollViewController.m */,
-				AA5DD82124731BBF008B5B38 /* TLYShyStatusBarController.h */,
-				AA5DD82024731BBF008B5B38 /* TLYShyStatusBarController.m */,
-				AA5DD81F24731BBF008B5B38 /* TLYShyViewController.h */,
-				AA5DD82224731BBF008B5B38 /* TLYShyViewController.m */,
-			);
-			path = ShyControllers;
-			sourceTree = "<group>";
-		};
 		AA6C75FF2482BD120009AFFB /* People */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +206,7 @@
 				AA6C75FF2482BD120009AFFB /* People */,
 				AACB13AF2475183B007C7944 /* Movies */,
 				AACB13AC2475180D007C7944 /* TV-Shows */,
+				AAF11D322493D19200F29688 /* Language */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,8 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				AAD258C6246E1FEC003C8AEA /* DataServices */,
-				AAD258C5246E1FD8003C8AEA /* Endpoints */,
-				AAD258BB246DEB59003C8AEA /* Endpoints.swift */,
 				AAD258BE246DED6C003C8AEA /* ImageService.swift */,
 			);
 			path = API;
@@ -302,11 +234,9 @@
 		AA969F1C2468F24A00D63378 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AA5DD80324731383008B5B38 /* CuatomNavBar */,
 				AA5227302468EBF000209793 /* Assets.xcassets */,
 				AAD258BA246DE0F0003C8AEA /* Config */,
 				AA5227352468EBF000209793 /* Info.plist */,
-				AA969F2D2468FE3F00D63378 /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -436,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				AAC5435B246F711E00168302 /* Movies.swift */,
+				AAF11D302493C60100F29688 /* MovieImage.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -445,6 +376,7 @@
 			children = (
 				AACB93AE246A1FAD00D32855 /* GradientView.swift */,
 				AADEAADA2475CD07003C77B0 /* Navbar + GradientView.swift */,
+				AABB92A824970F5300921262 /* ZoomingTransition.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -461,7 +393,9 @@
 		AAD258BA246DE0F0003C8AEA /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				AAD258C5246E1FD8003C8AEA /* Endpoints */,
 				AAC54359246F17A200168302 /* Helper.swift */,
+				AA969F2D2468FE3F00D63378 /* Constants.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -469,6 +403,7 @@
 		AAD258C5246E1FD8003C8AEA /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				AAD258BB246DEB59003C8AEA /* Endpoints.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -524,6 +459,14 @@
 				AAEEBF59247E85BD00019BA6 /* MoviesDetailsVC + SliderCollection.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AAF11D322493D19200F29688 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				AAF11D332493D1B400F29688 /* Language.swift */,
+			);
+			path = Language;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -632,21 +575,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABB92A924970F5300921262 /* ZoomingTransition.swift in Sources */,
 				AA4B1267247E390F0012556C /* ContentDetailsVC.swift in Sources */,
+				AAF11D312493C60100F29688 /* MovieImage.swift in Sources */,
 				AA969F2A2468FC1F00D63378 /* NavigationVC.swift in Sources */,
 				AAC5435C246F711E00168302 /* Movies.swift in Sources */,
 				AAB6B0B1246B2CD10004B1FB /* GenreImageCell.swift in Sources */,
 				AAD258C8246E2016003C8AEA /* API.swift in Sources */,
-				AA5DD81724731B9D008B5B38 /* UIViewController+BetterLayoutGuides.m in Sources */,
 				AACB93B1246A260400D32855 /* HomeVC + Collection.swift in Sources */,
-				AA5DD80924731722008B5B38 /* TLYShyNavBarManager.m in Sources */,
 				AAD258BC246DEB59003C8AEA /* Endpoints.swift in Sources */,
 				AA52272C2468EBEE00209793 /* BaseVC.swift in Sources */,
 				AADEAADB2475CD07003C77B0 /* Navbar + GradientView.swift in Sources */,
-				AA5DD82624731BBF008B5B38 /* TLYShyScrollViewController.m in Sources */,
 				AAC7BA77248D8630000957E4 /* MenuTableViewCell.swift in Sources */,
 				AAC5435A246F17A200168302 /* Helper.swift in Sources */,
 				AACB13AE24751826007C7944 /* Popular.swift in Sources */,
+				AAF11D342493D1B400F29688 /* Language.swift in Sources */,
 				AADE60C524770681008FD255 /* CollectionsVC + CollectionDelegates.swift in Sources */,
 				AADEAAE4247644E4003C77B0 /* CollectionsCell.swift in Sources */,
 				AA969F272468FB6900D63378 /* HomeVC.swift in Sources */,
@@ -657,17 +600,12 @@
 				AAC7BA73248D4180000957E4 /* GenreCell+ Collection.swift in Sources */,
 				AADEAADE2475D2C2003C77B0 /* CollectionsVC.swift in Sources */,
 				AA5227282468EBEE00209793 /* AppDelegate.swift in Sources */,
-				AA5DD81824731B9D008B5B38 /* NSObject+TLYSwizzlingHelpers.m in Sources */,
 				AA52272A2468EBEE00209793 /* SceneDelegate.swift in Sources */,
 				AA6C76012482BD2C0009AFFB /* PopularPeople.swift in Sources */,
-				AA5DD82424731BBF008B5B38 /* TLYShyStatusBarController.m in Sources */,
 				AAD258C0246DED6C003C8AEA /* ImageService.swift in Sources */,
 				AA51C0F42473C5F700DA5D99 /* GenreCell.swift in Sources */,
-				AA5DD82524731BBF008B5B38 /* TLYShyViewController.m in Sources */,
 				AACB93AF246A1FAD00D32855 /* GradientView.swift in Sources */,
 				AA969F2E2468FE3F00D63378 /* Constants.swift in Sources */,
-				AA5DD81924731B9D008B5B38 /* TLYDelegateProxy.m in Sources */,
-				AA5DD81A24731B9D008B5B38 /* UIScrollView+Helpers.m in Sources */,
 				AA7E1B96247FC2CF00312381 /* PopularPeopleCell.swift in Sources */,
 				AAEEBF5D247E867700019BA6 /* SliderDetailsCell.swift in Sources */,
 			);
@@ -825,7 +763,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ioslam.com.Moviebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Moviebase/Supporting Files/CuatomNavBar/Moviebase-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -848,7 +785,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ioslam.com.Moviebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Moviebase/Supporting Files/CuatomNavBar/Moviebase-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

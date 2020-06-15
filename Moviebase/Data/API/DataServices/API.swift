@@ -20,4 +20,25 @@ struct DataServices {
             }
         }
     }
+    static func getAllLanguages(completion: @escaping (_ error: Error?,_ language: [Language?])-> ()) {
+        AF.request(URLs.allLanguages).responseJSON { (response) in
+            do {
+                let jsonDecoder = try JSONDecoder().decode([Language].self, from: response.data!)
+                completion(nil,jsonDecoder)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    static func getMoviesImages(_ movieID: Int,completion: @escaping (_ error: Error?,_ MovieImage: MovieImage?)-> ()) {
+        let url = URLs.MovieCrewBaseURL + String(movieID) + URLs.movieImages
+        AF.request(url).responseJSON { (response) in
+            do {
+                let jsonDecoder = try JSONDecoder().decode(MovieImage.self, from: response.data!)
+                completion(nil,jsonDecoder)
+            } catch {
+                print(error)
+            }
+        }
+    }
 }

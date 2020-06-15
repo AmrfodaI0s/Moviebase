@@ -9,10 +9,12 @@
 import UIKit
 
 class SliderDetailsCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var iv: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
+    
 }

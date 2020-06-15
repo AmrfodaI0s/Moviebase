@@ -6,7 +6,7 @@
 //  Copyright © 2020 Eslam. All rights reserved.
 //
 
-//import Foundation
+import UIKit
 extension CollectionVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if flag == 4 {
@@ -21,11 +21,11 @@ extension CollectionVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Storyboard.collectionsCell, for: indexPath) as! CollectionsCell
         if flag == 4 {
-            Helper.displayImage(imageView: cell.iv, url: tvShowaResults?[indexPath.row].posterPath ?? "")
+            Helper.displayImage(imageView: cell.iv, url: tvShowaResults?[indexPath.row].posterPath)
         } else if flag == 5 {
-            Helper.displayImage(imageView: cell.iv, url: popularPeopleResults?[indexPath.row].profilePath ?? "")
+            Helper.displayImage(imageView: cell.iv, url: popularPeopleResults?[indexPath.row].profilePath)
         } else {
-            Helper.displayImage(imageView: cell.iv, url: moviesResults?[indexPath.row].posterPath ?? "")
+            Helper.displayImage(imageView: cell.iv, url: moviesResults?[indexPath.row].posterPath)
         }
         return cell
     }
@@ -39,9 +39,14 @@ extension CollectionVC : UICollectionViewDataSource {
         }
         else {
             count = moviesResults?.count
+            print(count ?? 10909)
         }
         if indexPath.row == count! - 1 {
-            getMore()
+            if flag == 90 {
+            getData()
+            } else {
+                getMore(index: 1)
+            }
         }
     }
     //MARK: - did selelect

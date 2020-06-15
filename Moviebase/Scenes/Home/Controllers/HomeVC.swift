@@ -6,15 +6,15 @@
 //  Copyright © 2020 Eslam. All rights reserved.
 //
 import UIKit
-import SwiftSpinner
 class HomeVC: BaseVC {
-    
+    var index = 0
     var trendingMovies: Movies?
     var popularMovies: Movies?
     var nowPlayingMovies: Movies?
     var upComingMovies: Movies?
     var popularTVShows: TVShows?
     var popularPeople: PopularPeople?
+    var movieClosure: (()-> Movies?)?
     
     @IBOutlet weak var SuperCollection: UICollectionView! {
         didSet {
@@ -31,12 +31,12 @@ class HomeVC: BaseVC {
         return image
     }()
     override func didLoded(){
+        self.navigationController?.hidesBarsOnSwipe = true
         getDataServices()
         setNavBarItems(show: true)
     }
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isTranslucent = true
+        super.viewWillAppear(false)
         profileImage.alpha = 1
         
     }
@@ -51,13 +51,16 @@ class HomeVC: BaseVC {
 extension HomeVC {
     func getDataServices(){
         DispatchQueue.main.async {
-            SwiftSpinner.show("Loading")
-            DataServices.GET(url: URLs.trendingMovies, 1) { (error, trendingMovies: Movies?) in self.trendingMovies = trendingMovies
+            Helper.Spinner(hidden: false, "Loading")
+            DataServices.GET(url: URLs.trendingMovies, 1) { (error, trendingMovies: Movies?) in
+                self.trendingMovies = trendingMovies
                 self.SuperCollection.reloadData()
+//                self.movieClosure = {
+//                    return self.trendingMovies
+//                }
             }
             DataServices.GET(url: URLs.popularMovies, 1) { (error, popularMovies: Movies?) in
                 self.popularMovies = popularMovies
-                //self.SuperCollection.reloadData()
             }
             DataServices.GET(url: URLs.upComingMovies, 1) { (error, upComingMovies: Movies?) in
                 self.upComingMovies = upComingMovies
@@ -75,7 +78,7 @@ extension HomeVC {
                 self.popularPeople = popularPeople
                 self.SuperCollection.reloadData()
             }
-            SwiftSpinner.hide()
+            Helper.Spinner(hidden: true, nil)
         }
     }
     
@@ -90,10 +93,13 @@ extension HomeVC {
         
         let moviesCollections = [popularMovies, nowPlayingMovies, upComingMovies]
         let tvShowsCollections = [popularTVShows]
+        
         let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.collectionVC) as! CollectionVC
         
         let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: K.Storyboard.moviesDetailsVC) as! ContentDetailsVC
+        
         cell.selectedCollection = { self.navigationController?.pushViewController(destinationVC, animated: true) }
+        
         switch index {
         case 1:
             cell.popularMovies = popularMovies?.results
@@ -104,10 +110,9 @@ extension HomeVC {
             cell.state = index
             destinationVC.title = K.IBOutlets.contentTypes[0] + " Movies"
             cell.selectedMovie =  { [weak self] selected in
-                detailsVC.movieDetails = selected
+            detailsVC.movieDetails = selected
                 self?.navigationController?.pushViewController(detailsVC, animated: true)
             }
-            
         case 2:
             cell.nowPlayingMovies = nowPlayingMovies?.results
             cell.genreType_label.text = K.ContentType.movie.rawValue
@@ -166,9 +171,8 @@ extension HomeVC {
 //MARK: - HomeVC + Navigation Bar
 extension HomeVC {
     //MARK: - nav bar items
-    func addImageToNavBar() {
-        guard let navBar = self.navigationController?.navigationBar
-            else { return }
+    func addImageToNavBar(with navBar: UINavigationBar) {
+        
         navBar.setGradientBackground(colors: [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5453499572), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.449620077), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.35),#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.05369755988),.clear], startPoint: .custom(point: CGPoint(x: 0.0, y: 0.2)), endPoint: .custom(point: CGPoint(x: 0, y: 0.9)))
         navBar.shadowImage = UIImage()
         navBar.addSubview(profileImage)
@@ -180,18 +184,19 @@ extension HomeVC {
         ])
     }
     func setNavBarItems(show : Bool){
-        // if show {
-        addImageToNavBar()
+        guard let navBar = self.navigationController?.navigationBar
+        else { return }
+        addImageToNavBar(with: navBar)
         //MARK: - Scrolling with shyNavBarManager
-        self.shyNavBarManager.scrollView = SuperCollection
+        //self.shyNavBarManager.scrollView = SuperCollection
         //MARK: - Transparent Nav-Bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+        navBar.shadowImage = UIImage()
+        navBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .black
         
         //leftButtons
-        self.navigationController?.navigationBar.setGradientBackground(colors: [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5453499572), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.449620077), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.35),#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.05369755988),.clear], startPoint: .custom(point: CGPoint(x: 0.0, y: 0.2)), endPoint: .custom(point: CGPoint(x: 0, y: 1)))
+        navBar.setGradientBackground(colors: [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7013324058), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5453499572), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.449620077), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.35),#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15) ,#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.05369755988),.clear], startPoint: .custom(point: CGPoint(x: 0.0, y: 0.2)), endPoint: .custom(point: CGPoint(x: 0, y: 1)))
         let menuButton = UIButton(type: .system)
         menuButton.setImage(#imageLiteral(resourceName: "menu24").withRenderingMode(.alwaysOriginal), for: .normal)
         menuButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
@@ -204,25 +209,13 @@ extension HomeVC {
         
     }
     @objc func presentMenu(){
+//        let vc = SideMenuVC()
+//        vc.trendingMovies = self.trendingMovies?.results
+//        vc.flag = 1
+//        //vc.reloadData()
         self.sideMenuViewController!.presentLeftMenuViewController()
     }
     @objc func presentSearch(){
         self.sideMenuViewController!.presentLeftMenuViewController()
     }
 }
-/*
- logo image
- let logo = UIImage(named: "micro.png")
- let imageView = UIImageView(image:logo)
- imageView.contentMode = .scaleAspectFit
- imageView.superview?.alignmentRectInsets.right. = CGRect(x: 0, y: 0, width: 0, height: 0)
- self.navigationItem.titleView = imageView
- */ /*
- let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
- let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
- let blurEffectView = UIVisualEffectView(effect: blurEffect)
- blurEffectView.frame = navBar.bounds
- blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
- navBar.addSubview(blurEffectView)
- navBar.setBackgroundImage(UIImage(), for: .default)
- */

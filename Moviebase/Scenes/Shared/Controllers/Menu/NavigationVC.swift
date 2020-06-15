@@ -15,7 +15,9 @@ class RootViewController: AKSideMenu, AKSideMenuDelegate {
     }
     override func awakeFromNib() {
         self.contentViewController = self.storyboard!.instantiateViewController(withIdentifier: K.Storyboard.homeVC)
-        self.leftMenuViewController = self.storyboard!.instantiateViewController(withIdentifier: K.Storyboard.sideMenuVC)
+        self.leftMenuViewController = self.storyboard!.instantiateViewController(withIdentifier:
+            K.Storyboard.sideMenuVC)
+        
     }
     open func sideMenu(_ sideMenu: AKSideMenu, shouldRecognizeGesture recognizer: UIGestureRecognizer, simultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         // return true to allow both gesture recognizers to recognize simultaneously. Returns false by default
@@ -49,6 +51,11 @@ class RootViewController: AKSideMenu, AKSideMenuDelegate {
     }
     
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
 }
