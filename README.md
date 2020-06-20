@@ -1,4 +1,4 @@
-# Moviebase - TMDB Watch this[Summary Video](https://www.youtube.com/watch?v=PsFUk_MoeQI) for more Details.
+# Moviebase APP, Watch this [Summary Video](https://www.youtube.com/watch?v=PsFUk_MoeQI) for more viewing the app.
 
 ## app like IMDB, know about your favourite movies, actors, etc...
 
